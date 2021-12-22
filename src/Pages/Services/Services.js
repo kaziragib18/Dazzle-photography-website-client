@@ -39,7 +39,7 @@ const Services = () => {
                     <div className="card text-center border-0">
                         <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-custom-icon-img-3.png" className="w-25 mx-auto img-hover" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title my-2">Shops &amps; Boutiques</h5>
+                            <h5 className="card-title my-2">Shops & Boutiques</h5>
                             <small className="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</small>
 
                         </div>
