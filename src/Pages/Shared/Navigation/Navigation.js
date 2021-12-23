@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../../../images/logo-removebg.png"
 
 
@@ -19,14 +19,14 @@ const Navigation = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 0 }}
           >
-            {/* <MenuIcon /> */}
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img width="47px" src={logo} alt="logo" /><span style={{ color: "#ef6c00" }} >DAZ</span><span style={{ color: "#ff9800" }} >ZLE</span>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" sx={{fontFamily:"poppins", fontWeight:"500", fontSize:"17px"}}>Login</Button>
         </Toolbar>
       </AppBar>
     </Box>

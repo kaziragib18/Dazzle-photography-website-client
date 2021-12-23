@@ -7,25 +7,26 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
+import Gallery from './Pages/Gallery/Gallery';
 
 function App() {
   return (
     <div>
       <Router>
-      <Switch>
-          <Route path="/about">
-            <Home />
-          </Route>
+        <Switch>
           <Route path="/home">
             <Home />
           </Route>
           <Route path="/">
             <Home />
           </Route>
+          <Route path="/gallery">
+            <Gallery />
+          </Route>
         </Switch>
 
       </Router>
-    
+
     </div>
   );
 }

@@ -9,8 +9,6 @@ const Footer = () => {
       <div className='footer-top' style={{ backgroundColor: "black" }}>
         <Container >
           <Grid container spacing={3}>
-
-
             <Grid item xs={12} md={3}>
               <div className='main-footer-topic'>
                 <div className='main-footer-topic-img'>

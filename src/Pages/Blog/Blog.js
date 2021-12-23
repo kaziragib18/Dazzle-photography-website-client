@@ -28,8 +28,8 @@ const Blog = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
             <div className='left-article-box b'>
-              <div className='left-article-box-img'>
-                <img src={blog1} alt="" />
+              <div className='left-article-box-img image-box'>
+                <img className='gallery' src={blog1} alt="" />
               </div>
               <div className='left-article-box-text pt-1'>
                 <h1>10 Tips For Planning A Wedding On A Budget</h1> <br />
@@ -43,8 +43,8 @@ const Blog = () => {
 
           <Grid item xs={12} md={5}>
             <div className='left-article-box a'>
-              <div className='left-article-box-img a'>
-                <img src={blog2} alt="" />
+              <div className='left-article-box-img a image-box'>
+                <img className='gallery' src={blog2} alt="" />
               </div>
               <div className='left-article-box-text a pt-2'>
                 <h1>How To Make Your Photographer Feel Appreciated</h1> <br />
@@ -55,8 +55,8 @@ const Blog = () => {
 
             </div>
             <div className='left-article-box'>
-              <div className='left-article-box-img a'>
-                <img src={blog3} alt="" />
+              <div className='left-article-box-img a image-box'>
+                <img className='gallery' src={blog3} alt="" />
               </div>
               <div className='left-article-box-text a pt-2'>
                 <h1>Maximizing The Value Of Your Photographer</h1> <br />
