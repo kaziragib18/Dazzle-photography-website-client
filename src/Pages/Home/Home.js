@@ -2,7 +2,9 @@ import React from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
 import Services from '../Services/Services'
 import Gallery from '../Gallery/Gallery';
-import Footer from '../Shared/Navigation/Footer/Footer';
+import NewsLetter from '../NewsLetter/NewsLetter';
+import Blog from '../Blog/Blog';
+import Footer from '../Shared/Footer/Footer';
 
 const Home = () => {
   return (
@@ -10,7 +12,8 @@ const Home = () => {
       <Navigation />
       <Services />
       <Gallery />
-
+      <NewsLetter/>
+      <Blog />
       <Footer/>
     </div>
   );

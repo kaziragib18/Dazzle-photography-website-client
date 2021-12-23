@@ -1,7 +1,6 @@
 import { Container, Grid } from '@mui/material';
-import { fontSize } from '@mui/system';
 import React from 'react';
-import logo from "../../../../images/logo-removebg.png"
+import logo from "../../../images/logo-removebg.png"
 
 import './Footer.css'
 const Footer = () => {
@@ -16,7 +15,7 @@ const Footer = () => {
               <div className='main-footer-topic'>
                 <div className='main-footer-topic-img'>
                   <p><img className='w-25' src={logo} alt="logo" /><span style={{ color: "#ef6c00", fontSize:"20px"}} >DAZ</span><span style={{ color: "#ff9800", fontSize:"20px" }} >ZLE</span> </p>
-                  <p>American Lance Armstrong holds the record of most victories in Tour de and with his 7 consecutive wins. Armstrong alsoArmstrong also won in the 2001</p>
+                  <p className='text-start'>We specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light. </p>
                 </div>
                 <div className="social-media-main">
                   <h3>SOCIAL MEDIA</h3>
@@ -137,7 +136,6 @@ const Footer = () => {
                 </div>
               </div>
             </Grid>
-
 
 
           </Grid>

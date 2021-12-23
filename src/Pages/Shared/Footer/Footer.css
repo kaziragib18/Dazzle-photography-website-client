@@ -1,3 +1,6 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
 .footer-top {
   border-top: 1px solid #80808045;
   padding-top: 90px;
@@ -6,7 +9,7 @@
 
 .top-info {
   color: #fff;
-  border-bottom: 1px solid #dddddd1a;
+  border-bottom: 1px solid #1d10101a;
   padding-bottom: 22px;
   text-align: start;
 }
@@ -25,7 +28,7 @@
 .info-text h5 {
   margin: 0;
   font-size: 18px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 5px;
   color: #d8d7d7;
 }
@@ -43,14 +46,14 @@
 .top-info h3 {
   color: #d8d7d7;
   font-weight: 600;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .top-info h3 {
   color: #dfdfdf;
   font-size: 20px;
   margin: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 15px;
   font-weight: 700;
   letter-spacing: 0px;
@@ -82,7 +85,7 @@
 
 .QUICK-LINKS h3 {
   margin: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 21px;
   margin-bottom: 20px;
 }
@@ -126,7 +129,7 @@
   margin-left: 0;
 }
 .social-media-main h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 21px;
 }
 

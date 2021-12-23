@@ -8,7 +8,7 @@ const Services = () => {
                 <div className="text-center">
                     <h2 className="google-font text-warning">Enjoy Our</h2>
                     <h1 className="text-size fw-bold">Quility Services</h1>
-                    <p className="text-muted">We specialise in event photography with the natural reportage documentation of corporate occasions and celebrations, producing the highest quality imagery that showcase your company and event in its best possible light. Whatever and whenever your occasion happens, our multi-talented event photographers will cover your occasion to your exact requirements. </p>
+                    <p className="text-muted">Dazzle specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light. Whatever and whenever your occasion happens, our multi-talented event photographers will cover your occasion to your exact requirements. </p>
                 </div>
 
             </div>
@@ -17,30 +17,30 @@ const Services = () => {
 
                 <div className="col-12 col-md-3">
                     <div className="card text-center border-0">
-                        <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-custom-icon-img-1.png" className="w-25 mx-auto img-hover" alt="..." />
+                        <img src="https://cdn-icons-png.flaticon.com/512/5848/5848821.png" className="w-25 mx-auto img-hover" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title my-2">Restaurants</h5>
-                            <small className="card-text text-muted">Over 10 years of Special Photography for 200+ clients of all types.</small>
+                            <h5 className="card-title my-2">Expert Photograpgher</h5>
+                            <small className="card-text text-muted">All of our photograpers have over 10 years of experience for 200+ clients of all types.</small>
 
                         </div>
                     </div>
                 </div>
                 <div className="col-12 col-md-3">
                     <div className="card text-center border-0">
-                        <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-custom-icon-img-2.png" className="w-25 mx-auto img-hover" alt="..." />
+                        <img src="https://cdn-icons-png.flaticon.com/512/3175/3175170.png" className="w-25 mx-auto img-hover" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title my-2">Sightseeing</h5>
-                            <small className="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</small>
+                            <h5 className="card-title my-2">Shooting Locations</h5>
+                            <small className="card-text text-muted">Exotic photo stooting location for the beautiful wedding that you always wanted!</small>
 
                         </div>
                     </div>
                 </div>
                 <div className="col-12 col-md-3">
                     <div className="card text-center border-0">
-                        <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-custom-icon-img-3.png" className="w-25 mx-auto img-hover" alt="..." />
+                        <img src="https://cdn-icons-png.flaticon.com/512/1005/1005735.png" className="w-25 mx-auto img-hover" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title my-2">Shops & Boutiques</h5>
-                            <small className="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</small>
+                            <h5 className="card-title my-2">Makeup Artist</h5>
+                            <small className="card-text text-muted">You will accompanied by our expert makeup artist so that you look gorgeous</small>
 
                         </div>
                     </div>
@@ -48,10 +48,10 @@ const Services = () => {
 
                 <div className="col-12 col-md-3">
                     <div className="card text-center border-0">
-                        <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/h1-custom-icon-img-4.png" className="w-25 mx-auto img-hover" alt="..." />
+                        <img src="https://cdn-icons-png.flaticon.com/512/2706/2706861.png" className="w-25 mx-auto img-hover" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title my-2">Where to Stay</h5>
-                            <small className="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</small>
+                            <h5 className="card-title my-2">24h Support</h5>
+                            <small className="card-text text-muted">Get 24h of customer support anyday & anytime.If you have any query call or email us.</small>
 
                         </div>
                     </div>
