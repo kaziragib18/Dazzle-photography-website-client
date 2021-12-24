@@ -34,7 +34,7 @@ const Blog = () => {
               <div className='left-article-box-text pt-1'>
                 <h1>10 Tips For Planning A Wedding On A Budget</h1> <br />
                 <small>Dec 22, 2021</small>
-                <p>Plenty of people dream of having the most beautiful, elaborate wedding their budget will allow. But what if you’re trying to plan your wedding on a budget? Don’t worry—you can still make your wedding day truly special without spending thousands of dollars or stressing yourself out too much about planning every last detail! Here are ten tips for planning your wedding on a budget that will save you time and money without sacrificing quality or making it seem like you didn’t put any effort into it at all. The best way to stick to your budget is by staying organized. You can do that by building a spreadsheet or...</p>
+                <p>Plenty of people dream of having the most beautiful, elaborate wedding their budget will allow. But what if you’re trying to plan your wedding on a budget? Don’t worry—you can still make your wedding day truly special without spending thousands of dollars or stressing yourself out too much about planning every last detail! Here are ten tips for planning your wedding on a budget that will save you time and money without sacrificing quality or making it seem like you didn’t put any effort into it at all. The best way to stick to your budget is by staying organized. You can do that by building a spreadsheet or other form of organization. Make a copy of your engagement ring receipt and keep it in a special folder so you always know where it is, and if anything happens to it, you’ll have backups.</p>
                 <button disabled>read more</button>
               </div>
 

@@ -9,9 +9,9 @@
 
 .left-article-box-text h1 {
   margin: 0;
-  margin-top: 10px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 28px;
+  margin-top: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
   color: #c3c1c1;
   margin-bottom: -18px;
 
@@ -22,22 +22,21 @@
 }
 
 .left-article-box-text small {
-  margin-bottom: 9px;
+  margin-bottom: 12px;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
   color: #9f9f9f;
 }
 .left-article-box-text p{
   color: #9f9f9f;
   line-height: 22px;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 .left-article-box-text button {
   border: 0;
   background: transparent;
   color: #e23801;
   text-transform: capitalize;
-  margin-top: 13px;
   padding: 10px 0px;
   font-size: 15px;
 }

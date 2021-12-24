@@ -1,0 +1,112 @@
+
+.home-service-box-text {
+  text-align: start;
+  color: #fff;
+
+}
+
+.home-service-box-text h2 {
+  margin: 0;
+  margin-top: 20px;
+  font-size: 24px;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  color: #d2d2d2;
+}
+
+.home-service-box-text p {
+  margin: 0;
+  margin-top: 11px;
+  color: #858585;
+}
+.home-service-box-text h3 {
+  margin: 0;
+  margin-top: 17px;
+  font-family: 'Oswald', sans-serif;
+  color: #c8c8c8;
+}
+
+.home-service-box-image img {
+  width: 100%;
+  border-radius: 0px 30px 0px 30px;
+}
+
+.home-services {
+  padding: 80px 0;
+
+}
+
+.home-service-box-image {
+  /* background: #050505; */
+  border-radius: 10px;
+  /* padding: 15px 30px; */
+  height: 176px;
+}
+
+.price-and-btn{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+
+}
+.price-and-btn a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #f238018a;
+  margin-top: 14px;
+  padding: 5px;
+}
+
+.home-service-all-content {
+  padding-top: 46px;
+}
+
+
+
+@media (max-width:768px) {
+  
+.home-service-box-image {
+  background: none;
+  border-radius: 10px;
+  padding: 0;
+}
+.home-service-box-text p {
+  font-size: 13px;
+}
+.home-services {
+  margin-top: 10px;
+}
+.home-service-all-content {
+  padding-top: 35px;
+}
+
+.home-service-box-text h2 { 
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+.home-service-box-text p {
+  margin-top: 8px;
+}
+.Home-service-box {
+  margin-bottom: 38px;
+}
+
+.price-and-btn a {
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.price-and-btn h3 {
+  font-size: 15px;
+}
+
+
+}
+
+
+
+
+
+
+

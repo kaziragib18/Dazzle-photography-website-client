@@ -14,7 +14,7 @@ const Banner = () => {
             <div className='home-banner-text'>
               <div className='banner-main-text'>
                 <h1 className="text-light">Capturing the emotions of your special day</h1>
-                <p><i>Dazzle was founded by a team of industry leaders who knew it was time to change the wedding photography game.</i></p>
+                <p><i>Dazzle takes the work out of finding a photographer with a team of hand-picked professionals ready to be matched to your wedding based on your wants and needs.</i></p>
               </div>
 
               <div className='home-banner-btn'>
