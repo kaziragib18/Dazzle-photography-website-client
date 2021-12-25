@@ -5,9 +5,9 @@ import wedding1 from '../../images/Gallery/g1.jpg'
 import wedding2 from '../../images/Gallery/g2.jpg'
 import wedding3 from '../../images/Gallery/g3.jpg'
 import wedding4 from '../../images/Gallery/g4.jpg'
-import wedding5 from '../../images/Gallery/g5.jpg'
+// import wedding5 from '../../images/Gallery/g5.jpg'
 import wedding6 from '../../images/Gallery/g6.jpg'
-import wedding7 from '../../images/Gallery/g7.jpg'
+// import wedding7 from '../../images/Gallery/g7.jpg'
 import wedding8 from '../../images/Gallery/g9.jpg'
 
 const Gallery = () => {

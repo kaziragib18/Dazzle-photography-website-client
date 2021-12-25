@@ -13,9 +13,9 @@ const Packages = () => {
   return (
     <div style={{backgroundColor:"black"}} className='home-services'>
       <Container>
-        <div className="ourworks-title">
+        <div>
           <h3 className='google-font text-warning'>Our Premium Packages</h3>
-          <h3>Affordable packages to choose from!</h3>
+          <h2 style={{fontSize:"2.6rem", color:"#e8e4e4bf" }}>Affordable packages to choose from!</h2>
         </div>
         <div className="home-service-all-content">
           <Grid container spacing={5}>

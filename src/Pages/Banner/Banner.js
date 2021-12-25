@@ -18,8 +18,8 @@ const Banner = () => {
               </div>
 
               <div className='home-banner-btn'>
-                <Link to='/gallery'>
-                  <button>Gallery</button>
+                <Link to='/allPackages'>
+                  <button>All Packages</button>
                 </Link>
               </div>
             </div>

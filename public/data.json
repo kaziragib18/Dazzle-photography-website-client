@@ -1,28 +1,28 @@
 [
   {
     "id": 1,
-    "name": "Personal Trainers",
+    "name": "Dazzle Alltime Clasic",
     "info": " ",
     "description": "Maximize your workout with the help of our personal trainers.",
     "img": "https://i.ibb.co/GptmB5s/photo-1550005809-91ad75fb315f-ixlib-rb-1-2.jpg"
   },
   {
     "id": 2,
-    "name": "Private Locker",
+    "name": "Dazzle Classic Plus",
     "info": " ",
     "description": "Our locker rooms are equipped to help you be on your way after a workout.",
     "img": "https://i.ibb.co/m41qMJn/photo-1549488497-94b52bddac5d-ixlib-rb-1-2.jpg"
   },
   {
     "id": 3,
-    "name": "Spa Services",
+    "name": "Dazzle New Luxury",
     "info": " ",
     "description": "Relax after an intense workout with any one of our spa services.",
     "img": "https://i.ibb.co/p2TdS7H/photo-1465495976277-4387d4b0b4c6-ixlib-rb-1-2.jpg"
   },
   {
     "id": 4,
-    "name": "Aquatic Pool",
+    "name": "Dazzle Alltime Prime",
     "info": " ",
     "description": "Enjoy your workout knowing your children are safe & nearby.",
     "img": "https://i.ibb.co/Gvs5ZZb/photo-1583939003490-5a1b6cab1eea-ixlib-rb-1-2.jpg"

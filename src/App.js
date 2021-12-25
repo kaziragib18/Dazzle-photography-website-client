@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
-import Gallery from './Pages/Gallery/Gallery';
+import AllPackages from './Pages/AllPackages/AllPackages/AllPackages';
 
 function App() {
   return (
@@ -17,11 +17,11 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/gallery">
-            <Gallery />
+          <Route exact path="/allPackages">
+            <AllPackages />
           </Route>
         </Switch>
 
