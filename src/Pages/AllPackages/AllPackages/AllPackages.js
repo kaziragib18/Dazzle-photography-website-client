@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import PackageBanner from '../../AllPackages/PackageBanner/PackageBanner'
 import Packages from '../../Packages/Packages'
@@ -8,12 +8,13 @@ import BookingAvailable from '../BookingAvailable/BookingAvailable';
 
 
 const AllPackages = () => {
+  const [date, setDate] = React.useState(new Date());
   return (
     <>
       <Navigation />
       <PackageBanner />
-      <BookingHeader/>
-      <BookingAvailable/>
+      <BookingHeader date={date} setDate={setDate}/>
+      <BookingAvailable date={date}/>
       <Packages />
       <Footer />
     </>

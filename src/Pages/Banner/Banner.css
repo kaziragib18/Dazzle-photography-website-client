@@ -82,10 +82,10 @@
   transition: .3s;
   z-index: 1;
   font-family: inherit;
-  color: #17C3B2;
+  color: #d3751d
  }
  
- button::before {
+ #buttonBtn::before {
   content: '';
   width: 0;
   height: 300%;
@@ -99,11 +99,11 @@
   z-index: -1;
  }
  
- button:hover::before {
+ #buttonBtn:hover::before {
   width: 100%;
  }
  
- button:hover {
+ #buttonBtn:hover {
   color: #111;
  }
  

@@ -18,7 +18,7 @@ const PackageBanner = () => {
               </div>
 
               <div className='home-banner-btn'>
-                <Link to='/gallery'>
+                <Link to='/home'>
                   {/* <button></button> */}
                 </Link>
               </div>

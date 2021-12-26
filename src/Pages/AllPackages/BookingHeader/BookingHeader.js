@@ -4,13 +4,14 @@ import t4 from '../../../images/Team/t4.jpg';
 import t2 from '../../../images/Team/t2.jpg';
 import Calender from '../../Shared/Calender/Calender';
 
-const BookingHeader = () => {
+const BookingHeader = ({ date, setDate }) => {
+
   return (
     <>
       <div className='team-section pb-5'>
         <Container>
-          <Grid container spacing={15}>
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={10}>
+            <Grid item xs={12} md={7}>
               <div className="team-section-img pt-5 pb-5">
                 <div className='team-section-img1'>
                   <img style={{ borderRadius: "80px" }} src={t4} alt="" />
@@ -20,11 +21,12 @@ const BookingHeader = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <div className='team-section-content'>
-                <div className=''>
-                  <Calender/>
-                 
+            <Grid item xs={12} md={5} >
+              <div className=''>
+                <h4 className='pt-5 google-font text-warning'>Availabe Booking Schedule</h4>
+                <h2>Select the day you want to book our package</h2>
+                <div className='pt-3'>
+                  <Calender date={date} setDate={setDate} />
                 </div>
 
               </div>
@@ -38,15 +40,3 @@ const BookingHeader = () => {
 };
 
 export default BookingHeader;
-
-{/* <Container>
-<Grid container spacing={2}>
-  <Grid item xs={12} md={6}>
-
-  </Grid>
-  <Grid item xs={12} md={6}>
-
-  </Grid>
-
-</Grid>
-</Container> */}

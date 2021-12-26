@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BookingAvailable = () => {
+const BookingAvailable = ({date}) => {
   return (
-    <div>
-      <h2>Available Booking</h2>
+    <div style={{backgroundColor:"black"}}>
+      <h2 className='google-font text-warning m-0 text-center p-4'>Available Booking at {date.toDateString()}</h2>
     </div>
   );
 };

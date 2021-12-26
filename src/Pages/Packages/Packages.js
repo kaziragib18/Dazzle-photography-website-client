@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CircularProgress, Container, Grid } from '@mui/material';
 import Package from '../Package/Package'
 
-const Packages = () => {
+const Packages = ({date}) => {
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const Packages = () => {
               packages.map(packageData => <Package
                 key={packageData.id}
                 packageData={packageData}
+                date={date}
               ></Package>)
             }
           </Grid>
