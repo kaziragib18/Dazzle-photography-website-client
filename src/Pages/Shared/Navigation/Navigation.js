@@ -28,18 +28,19 @@ const Navigation = () => {
             <img width="47px" src={logo} alt="logo" /><span style={{ color: "#ef6c00" }} >DAZ</span><span style={{ color: "#ff9800" }} >ZLE</span>
           </Typography>
 
-          <Link 
-          style={{textDecoration:"none", color:"lightgray"}} 
-          to='/home'> <Button color="inherit"
-          sx={{fontFamily:"poppins", fontWeight:"500", fontSize:"17px"}}
-          >Home</Button>
+          <Link
+            style={{ textDecoration: "none", color: "lightgray" }}
+            to='/home'> <Button color="inherit"
+              sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}
+            >Home</Button>
           </Link>
 
-          <Link style={{textDecoration:"none", color:"lightgray"}} 
-          to='/allPackages'><Button color="inherit" 
-          sx={{fontFamily:"poppins", fontWeight:"500", fontSize:"17px"}}>Packages</Button></Link>
+          <Link style={{ textDecoration: "none", color: "lightgray" }}
+            to='/allPackages'><Button color="inherit"
+              sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Packages</Button></Link>
 
-          <Button color="inherit" sx={{fontFamily:"poppins", fontWeight:"500", fontSize:"17px"}}>Login</Button>
+          <Link style={{ textDecoration: "none", color: "lightgray" }} to='/login'><Button color="inherit"
+            sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Login</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>

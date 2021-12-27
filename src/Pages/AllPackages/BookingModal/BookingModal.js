@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
 import { Button } from '@mui/material';
 
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -19,12 +18,12 @@ const style = {
   p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, packageData}) => {
+const BookingModal = ({ openBooking, handleBookingClose, packageData, date }) => {
   const { name, img, description } = packageData;
 
-  const handleBookingSubmit= e =>{
+  const handleBookingSubmit = e => {
     alert("Sumbiting");
-    
+
     handleBookingClose();
     e.preventDefault();
   }
@@ -42,12 +41,13 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData}) => {
         </h1>
 
         <form onSubmit={handleBookingSubmit}>
+
           <TextField
             sx={{ width: "95%", m: 1 }}
             hiddenLabel
             id="filled-hidden-label-small"
-            defaultValue="Your email"
             variant="filled"
+            defaultValue="Name"
             size="small"
           />
 
@@ -56,7 +56,17 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData}) => {
             hiddenLabel
             id="filled-hidden-label-small"
             variant="filled"
-            defaultValue="Your Name"
+            defaultValue="Email"
+            size="small"
+          />
+
+          <TextField
+            sx={{ width: "95%", m: 1 }}
+            hiddenLabel
+            disabled
+            id="filled-hidden-label-small"
+            defaultValue={date.toDateString()}
+            variant="filled"
             size="small"
           />
 

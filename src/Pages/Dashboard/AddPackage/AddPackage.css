@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital@1&display=swap');
+.add__package{
+  width: 100%;
+  background-color: black;
+}
+.add__package form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   
+}
+
+.add__package form input, textarea{
+      width: 50%;
+      margin-bottom: 10px;
+      padding: 10px;
+}

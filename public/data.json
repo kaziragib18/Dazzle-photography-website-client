@@ -2,8 +2,15 @@
   {
     "id": 1,
     "name": "Dazzle Alltime Clasic",
-    "info": " ",
-    "description": "Maximize your workout with the help of our personal trainers.",
+    "desc1": "One Lead Photographer",
+    "desc2": "Two Assistant Photographer",
+    "desc3": "5 Hours of Photography Coverage",
+    "desc4": "High Resolution Images",
+    "desc5": "Digital Reprint Rights",
+    "desc6": "Online Gallery ready within 30 Days",
+    "desc7": "",
+    "desc8": "",
+    "desc9": "",
     "img": "https://i.ibb.co/GptmB5s/photo-1550005809-91ad75fb315f-ixlib-rb-1-2.jpg"
   },
   {
@@ -16,42 +23,36 @@
   {
     "id": 3,
     "name": "Dazzle New Luxury",
-    "info": " ",
     "description": "Relax after an intense workout with any one of our spa services.",
     "img": "https://i.ibb.co/p2TdS7H/photo-1465495976277-4387d4b0b4c6-ixlib-rb-1-2.jpg"
   },
   {
     "id": 4,
     "name": "Dazzle Alltime Prime",
-    "info": " ",
     "description": "Enjoy your workout knowing your children are safe & nearby.",
     "img": "https://i.ibb.co/Gvs5ZZb/photo-1583939003490-5a1b6cab1eea-ixlib-rb-1-2.jpg"
   },
   {
     "id": 5,
     "name": "Group Classes",
-    "info": " ",
     "description": "We offer classes for yoga, spin, Zumba, Circuit Training, MX4 and more.",
     "img": "https://i.ibb.co/Nyfx58s/photo-1628702840326-8d2e62bf7822-ixlib-rb-1-2.jpg"
   },
   {
     "id": 6,
     "name": "24/7 Access",
-    "info": " ",
     "description": "Workout when the time is right for you with 24/7 access.",
     "img": "https://i.ibb.co/gMNfQJm/photo-1460364157752-926555421a7e-ixlib-rb-1-2.jpg"
   },
   {
     "id": 7,
     "name": "Excersize daily",
-    "info": " ",
     "description": "Workout when the time is right for you with 24/7 access.",
     "img": "https://i.ibb.co/523MHqS/photo-1610048869604-b76be3641fec-ixlib-rb-1-2.jpg"
   },
   {
     "id": 8,
     "name": "All Access",
-    "info": " ",
     "description": "Workout when the time is right for you with 24/7 access.",
     "img": "https://i.ibb.co/7t70r25/photo-1634061330609-efe8060bc966-ixlib-rb-1-2.jpg"
   }

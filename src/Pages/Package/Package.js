@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './Package.css';
 import BookingModal from '../AllPackages/BookingModal/BookingModal';
 
-const Package = ({ packageData }) => {
-  const { name, img } = packageData;
+const Package = ({ packageData, date }) => {
+  const { name, desc1, desc2, desc3, desc4, desc5, price, img } = packageData;
 
   const [openBooking, setOpenBooking] = React.useState(false);
   const handleBookingOpen = () => setOpenBooking(true);
@@ -20,9 +20,13 @@ const Package = ({ packageData }) => {
           </div>
           <div className='home-service-box-text'>
             <h2>{name}</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque sint voluptates, sequi esse id laborum necessitatibus nobis praesentium cum obcaecati.</p>
+            <p>{desc1}</p>
+            <p>{desc2}</p>
+            <p>{desc3}</p>
+            <p>{desc4}</p>
+            <p>{desc5}</p>
             <div className='price-and-btn'>
-              <h3>$ 2000</h3>
+              <h3>$ {price}</h3>
               <Link onClick={handleBookingOpen}>Book now</Link>
             </div>
           </div>
@@ -30,9 +34,11 @@ const Package = ({ packageData }) => {
         </div>
       </Grid>
       <BookingModal
+        date={date}
         packageData={packageData}
         openBooking={openBooking}
-        handleBookingClose={handleBookingClose} />
+        handleBookingClose={handleBookingClose}
+      />
     </>
   );
 };

@@ -18,7 +18,7 @@ const Banner = () => {
               </div>
 
               <div className='home-banner-btn'>
-                <Link to='/allPackages'>
+                <Link to='/addPackage'>
                   <button id="bannerBtn">All Packages</button>
                 </Link>
               </div>

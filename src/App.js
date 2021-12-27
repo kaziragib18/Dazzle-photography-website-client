@@ -3,11 +3,12 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login/Login';
 import AllPackages from './Pages/AllPackages/AllPackages/AllPackages';
+import AddPackage from './Pages/Dashboard/AddPackage/AddPackage';
 
 function App() {
   return (
@@ -17,11 +18,17 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/allPackages">
+          <Route path="/allPackages">
             <AllPackages />
+          </Route>
+          <Route path="/addPackage">
+            <AddPackage />
           </Route>
         </Switch>
 
