@@ -8,9 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../../../images/logo-removebg.png"
 import { Link } from 'react-router-dom';
-
+import useAuth from '../../../hooks/useAuth'
 
 const Navigation = () => {
+  const { user, logOut } = useAuth()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ backgroundColor: "#212121" }} position="static">
@@ -39,8 +40,16 @@ const Navigation = () => {
             to='/allPackages'><Button color="inherit"
               sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Packages</Button></Link>
 
-          <Link style={{ textDecoration: "none", color: "lightgray" }} to='/login'><Button color="inherit"
-            sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Login</Button></Link>
+          {user?.email ?
+
+            <Button onClick={logOut} color="inherit"
+              sx={{ color: "#b71c1c", fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Logout</Button>
+            :
+            <Link style={{ textDecoration: "none", color: "lightgray" }} to='/login'><Button color="inherit"
+              sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Login</Button>
+            </Link>
+          }
+
         </Toolbar>
       </AppBar>
     </Box>

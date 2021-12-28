@@ -10,33 +10,42 @@ import Login from './Pages/Login/Login/Login';
 import AllPackages from './Pages/AllPackages/AllPackages/AllPackages';
 import AddPackage from './Pages/Dashboard/AddPackage/AddPackage';
 import Register from './Pages/Login/Register/Register';
+import AuthProvider from '../src/contexts/AuthProvider/AuthProvider'
 
 function App() {
   return (
     <div>
-      <Router>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/allPackages">
-            <AllPackages />
-          </Route>
-          <Route path="/addPackage">
-            <AddPackage />
-          </Route>
-        </Switch>
+      <AuthProvider>
+        <Router>
+          <Switch>
 
-      </Router>
+            <Route path="/home">
+              <Home />
+            </Route>
+
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/register">
+              <Register />
+            </Route>
+
+            <Route exact path="/">
+              <Home />
+            </Route>
+
+            <Route path="/allPackages">
+              <AllPackages />
+            </Route>
+
+            <Route path="/addPackage">
+              <AddPackage />
+            </Route>
+          </Switch>
+
+        </Router>
+      </AuthProvider>
 
     </div>
   );
