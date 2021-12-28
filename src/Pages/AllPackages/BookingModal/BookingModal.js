@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-// import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
 import { Button } from '@mui/material';
+import useAuth from '../../../hooks/useAuth';
 
 const style = {
   position: 'absolute',
@@ -19,7 +19,8 @@ const style = {
 };
 
 const BookingModal = ({ openBooking, handleBookingClose, packageData, date }) => {
-  const { name, img, description } = packageData;
+  const { name, img } = packageData;
+  const { user } = useAuth();
 
   const handleBookingSubmit = e => {
     alert("Sumbiting");
@@ -36,32 +37,35 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData, date }) =>
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <h1 className='google-font pb-2 text-center' >
+        <h2 className='google-font pb-2 text-center' >
           {name}
-        </h1>
+        </h2>
+        <div className='w-100 pb-2'>
+          <img className='w-100' style={{ borderRadius: "20px" }} src={img} alt="" />
+        </div>
 
         <form onSubmit={handleBookingSubmit}>
 
           <TextField
-            sx={{ width: "95%", m: 1 }}
+            sx={{ width: "95%", m: 1, fontStyle: 'italic' }}
             hiddenLabel
             id="filled-hidden-label-small"
             variant="filled"
-            defaultValue="Name"
+            defaultValue={user.displayName}
             size="small"
           />
 
           <TextField
-            sx={{ width: "95%", m: 1 }}
+            sx={{ width: "95%", m: 1, fontStyle: 'italic' }}
             hiddenLabel
             id="filled-hidden-label-small"
             variant="filled"
-            defaultValue="Email"
+            defaultValue={user.email}
             size="small"
           />
 
           <TextField
-            sx={{ width: "95%", m: 1 }}
+            sx={{ width: "95%", m: 1, fontStyle: 'italic' }}
             hiddenLabel
             disabled
             id="filled-hidden-label-small"
@@ -71,12 +75,12 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData, date }) =>
           />
 
           <TextField
-            sx={{ width: "95%", m: 1 }}
+            sx={{ width: "95%", m: 1, fontStyle: 'italic' }}
             hiddenLabel
             id="filled-hidden-label-small"
             variant="filled"
             name="phone"
-            placeholder="Contact info"
+            placeholder="Contact Number"
             type="number"
             defaultValue=""
             size="small"

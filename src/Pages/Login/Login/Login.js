@@ -1,27 +1,36 @@
 import React, { useState } from 'react';
 import { Alert, Paper, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import Navigation from '../../Shared/Navigation/Navigation'
 import login from '../../../images/login.svg'
 import googleIcon from '../../../images/googleIcon.png'
+import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
+  const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+
+  const location = useLocation();
+  const history = useHistory();
 
   const handleOnBlur = e => {
     const field = e.target.name;
     const value = e.target.value;
-    const newLoginData = {...loginData};
+    const newLoginData = { ...loginData };
     newLoginData[field] = value;
     setLoginData(newLoginData);
 
     // console.log(field, value);
   }
   const handleLoginSubmit = e => {
-
-
+    loginUser(loginData.email, loginData.password, location, history);
     e.preventDefault();
   }
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, history)
+  }
+
 
   return (
     <>
@@ -33,13 +42,12 @@ const Login = () => {
               <h1 className="google-font text-warning"> Welcome Please Login
               </h1>
 
-              {/* {isLoading && <CircularProgress />
-                                    } */}
-
+              {isLoading && <CircularProgress />
+              }
               <form onSubmit={handleLoginSubmit}>
                 <TextField
                   required
-                  sx={{ width: '75%', m: 1, fontStyle: 'italic'}}
+                  sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
                   id="standard-basic"
                   label="Email"
                   type="email"
@@ -49,7 +57,7 @@ const Login = () => {
                 />
                 <TextField
                   required
-                  sx={{ width: '75%', m: 1, fontStyle: 'italic'}}
+                  sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
                   id="standard-basic"
                   label="Password"
                   type="password"
@@ -67,15 +75,16 @@ const Login = () => {
                 </div>
 
                 <Button
+                  onClick={handleLoginSubmit}
                   variant="contained"
-                  sx={{ width: "32%", m: 1, fontStyle: 'italic', fontSize: 12}}
+                  sx={{ width: "32%", m: 1, fontStyle: 'italic', fontSize: 12 }}
                   style={{ backgroundColor: '#e65100' }}
                 >Sign in</Button>
 
-                {/* {user?.email && <Alert severity="success" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>SuccessFully logged in
-                                          </Alert>}
-                                          {authError && <Alert severity="error" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>{authError}
-                                          </Alert>} */}
+                {user?.email && <Alert severity="success" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>SuccessFully logged in
+                </Alert>}
+                {authError && <Alert severity="error" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>{authError}
+                </Alert>}
               </form>
 
               <hr style={{ color: "gray", width: "75%" }} />
@@ -83,7 +92,9 @@ const Login = () => {
               <Typography variant="body1" style={{ fontSize: "14px", fontWeight: "500", color: '#2e7d32', fontStyle: 'italic', padding: "5px" }} gutterBottom>You Can Also Sign in With:
               </Typography>
 
-              <Button style={{ width: "10%", }} ><img src={googleIcon} style={{ width: "100%" }} alt="google-icon" /></Button>
+              <Button
+                onClick={handleGoogleSignIn}
+                style={{ width: "10%", }} ><img src={googleIcon} style={{ width: "100%" }} alt="google-icon" /></Button>
             </Grid>
 
             <Grid item xs={12} md={6}>

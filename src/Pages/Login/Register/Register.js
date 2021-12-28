@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Alert, Paper, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Alert, Paper, Button, CircularProgress, Container, Grid, TextField } from '@mui/material';
+import { Link, useHistory } from 'react-router-dom';
 import Navigation from '../../Shared/Navigation/Navigation'
-import login from '../../../images/register.svg'
+import register from '../../../images/register.svg'
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
 
   const [loginData, setLoginData] = useState({});
+  const history = useHistory();
+
   const { registerUser, user, isLoading, authError } = useAuth();
 
   const handleOnBlur = e => {
@@ -24,7 +26,7 @@ const Register = () => {
       alert('Your password did not match');
       return
     }
-    registerUser(loginData.email, loginData.password);
+    registerUser(loginData.email, loginData.password, loginData.name, history);
     e.preventDefault();
   }
 
@@ -40,6 +42,16 @@ const Register = () => {
 
               {!isLoading &&
                 <form>
+                  <TextField
+                    required
+                    sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
+                    id="standard-basic"
+                    label="Name"
+                    type="name"
+                    name="name"
+                    onBlur={handleOnBlur}
+                    variant="standard"
+                  />
                   <TextField
                     required
                     sx={{ width: '75%', m: 1, fontStyle: 'italic' }}
@@ -97,7 +109,7 @@ const Register = () => {
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <img src={login} style={{ width: '100%', marginTop: 40 }} alt="" />
+              <img src={register} style={{ width: '100%', marginTop: 40 }} alt="" />
             </Grid>
 
           </Grid>
