@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Package.css';
 import BookingModal from '../AllPackages/BookingModal/BookingModal';
 
-const Package = ({ packageData, date }) => {
+const Package = ({ packageData, date, setBookingSuccess }) => {
   const { name, desc1, desc2, desc3, desc4, desc5, price, img } = packageData;
 
   const [openBooking, setOpenBooking] = React.useState(false);
@@ -38,6 +38,7 @@ const Package = ({ packageData, date }) => {
         packageData={packageData}
         openBooking={openBooking}
         handleBookingClose={handleBookingClose}
+        setBookingSuccess={setBookingSuccess}
       />
     </>
   );
