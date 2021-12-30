@@ -41,9 +41,14 @@ const Navigation = () => {
               sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Packages</Button></Link>
 
           {user?.email ?
+            <Box>
+              <Link style={{ textDecoration: "none", color: "lightgray" }} to='/dashboard'><Button color="inherit"
+                sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Dashboard</Button>
+              </Link>
 
-            <Button onClick={logOut} color="inherit"
-              sx={{ color: "#b71c1c", fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Logout</Button>
+              <Button onClick={logOut} color="inherit"
+                sx={{ color: "#b71c1c", fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Logout</Button>
+            </Box>
             :
             <Link style={{ textDecoration: "none", color: "lightgray" }} to='/login'><Button color="inherit"
               sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Login</Button>

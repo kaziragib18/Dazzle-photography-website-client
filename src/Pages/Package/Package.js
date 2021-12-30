@@ -30,7 +30,6 @@ const Package = ({ packageData, date, setBookingSuccess }) => {
               <Link onClick={handleBookingOpen}>Book now</Link>
             </div>
           </div>
-
         </div>
       </Grid>
       <BookingModal

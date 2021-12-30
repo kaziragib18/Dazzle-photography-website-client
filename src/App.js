@@ -12,6 +12,8 @@ import AddPackage from './Pages/Dashboard/AddPackage/AddPackage';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from '../src/contexts/AuthProvider/AuthProvider'
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Deashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import ManagePackages from './Pages/Dashboard/ManagePackages/ManagePackages';
 
 function App() {
   return (
@@ -36,6 +38,10 @@ function App() {
               <Home />
             </Route>
 
+            <PrivateRoute path="/dashboard">
+              <Deashboard />
+            </PrivateRoute>
+
             <PrivateRoute path="/allPackages">
               <AllPackages />
             </PrivateRoute>
@@ -43,6 +49,11 @@ function App() {
             <Route path="/addPackage">
               <AddPackage />
             </Route>
+
+            <Route path="/managePackages">
+              <ManagePackages />
+            </Route>
+
           </Switch>
 
         </Router>
