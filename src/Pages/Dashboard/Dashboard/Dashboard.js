@@ -8,36 +8,63 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from "react-router-dom";
+// import { makeStyles } from '@mui/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
-import CollectionsIcon from '@mui/icons-material/Collections';
+import CameraEnhanceIcon from '@mui/icons-material/CameraEnhance';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import PaymentIcon from '@mui/icons-material/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
+import AssignAdmin from '../../Dashboard/AssignAdmin/AssignAdmin'
 
-const drawerWidth = 200;
+const drawerWidth = 210;
 
 function Deashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [date, setDate] = React.useState()
+
+  const [date, setDate] = React.useState();
+  let { path, url } = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // const useStyle = makeStyles({
+  //   btn: {
+  //     fontFamily: 'poppins',
+  //     fontSize: 17,
+  //     fontWeight: 400
+  //   },
+  // })
+
+
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      <Link style={{ textDecoration: "none", color: "gray" }} to="/home"><HomeIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 600 }}> Home</Button>
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to="/home"><HomeIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}> Home</Button>
       </Link>
       <br />
-      <Link style={{ textDecoration: "none", color: "gray" }} to="/allPackages"><CollectionsIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 600 }}> All Packages</Button>
+      <Link style={{ textDecoration: "none", color: "gray", padding: "5px" }} to="/allPackages"><CameraEnhanceIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}> All Packages</Button>
       </Link>
       <Divider />
+
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}`}><EventNoteOutlinedIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Booking</Button>
+      </Link>
+      <Divider />
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/assignAdmin`}><GroupAddIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Assign Admin</Button>
+      </Link>
     </div>
   );
 
@@ -105,10 +132,17 @@ function Deashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-          <DashboardHome date={date} set={setDate} />
-        </Typography>
+        <Switch>
 
+          <Route exact path={path}>
+            <DashboardHome date={date} setDate={setDate} />
+          </Route>
+
+          <Route path={`${path}/assignAdmin`}>
+            <AssignAdmin />
+          </Route>
+
+        </Switch>
       </Box>
     </Box>
   );
