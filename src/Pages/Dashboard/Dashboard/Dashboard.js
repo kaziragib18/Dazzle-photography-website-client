@@ -22,8 +22,11 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import PaymentIcon from '@mui/icons-material/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AssignAdmin from '../../Dashboard/AssignAdmin/AssignAdmin'
+import useAuth from '../../../hooks/useAuth';
+import AddPackage from '../AddPackage/AddPackage';
+import ManagePackages from '../ManagePackages/ManagePackages';
 
-const drawerWidth = 210;
+const drawerWidth = 223;
 
 function Deashboard(props) {
   const { window } = props;
@@ -31,6 +34,7 @@ function Deashboard(props) {
 
   const [date, setDate] = React.useState();
   let { path, url } = useRouteMatch();
+  const { admin } = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -64,6 +68,16 @@ function Deashboard(props) {
       <Divider />
       <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/assignAdmin`}><GroupAddIcon />
         <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Assign Admin</Button>
+      </Link>
+      <Divider />
+
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addPackage`}><AddCircleOutlineIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Add Package</Button>
+      </Link>
+      <Divider />
+      
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/managePackages`}><AssignmentIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Manage Packages</Button>
       </Link>
     </div>
   );
@@ -140,6 +154,14 @@ function Deashboard(props) {
 
           <Route path={`${path}/assignAdmin`}>
             <AssignAdmin />
+          </Route>
+
+          <Route path={`${path}/addPackage`}>
+            <AddPackage />
+          </Route>
+
+          <Route path={`${path}/managePackages`}>
+            <ManagePackages />
           </Route>
 
         </Switch>

@@ -35,8 +35,8 @@ const ManagePackages = () => {
 
 
   return (
-    <div style={{ backgroundColor: "black", padding: "30px" }}>
-      <h1 className='google-font p-4 fs-1'>Manage All Packages</h1>
+    <div>
+      <h1 className='google-font p-1 fs-1'>Manage All Packages</h1>
       {
         packages.map(packageAll =>
           < div className='home-services p-0 ' key={packageAll._id} >

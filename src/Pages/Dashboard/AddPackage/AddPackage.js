@@ -20,8 +20,7 @@ const AddPackage = () => {
 
   return (
     <div className="add__package">
-      <h2
-        style={{ fontFamily: 'poppins', fontSize: 20, fontWeight: 700, color: "white" }} className="fs-4 pt-5 mt-0 text-center">Add New Package</h2>
+      <h2 className="google-font text-dark text-center">Add New Package</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} >
         <input {...register("name", { required: true, maxLength: 50 })} placeholder="Package Name" />
