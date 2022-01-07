@@ -25,6 +25,8 @@ import AssignAdmin from '../../Dashboard/AssignAdmin/AssignAdmin'
 import useAuth from '../../../hooks/useAuth';
 import AddPackage from '../AddPackage/AddPackage';
 import ManagePackages from '../ManagePackages/ManagePackages';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Payment from '../Payment/Payment';
 
 const drawerWidth = 223;
 
@@ -54,31 +56,36 @@ function Deashboard(props) {
       <Toolbar />
       <Divider />
       <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to="/home"><HomeIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}> Home</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}> Home</Button>
       </Link>
       <br />
       <Link style={{ textDecoration: "none", color: "gray", padding: "5px" }} to="/allPackages"><CameraEnhanceIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}> All Packages</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}> All Packages</Button>
       </Link>
       <Divider />
 
       <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}`}><EventNoteOutlinedIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Booking</Button>
-      </Link>
-      <Divider />
-      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/assignAdmin`}><GroupAddIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Assign Admin</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Booking</Button>
       </Link>
       <Divider />
 
-      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addPackage`}><AddCircleOutlineIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Add Package</Button>
-      </Link>
-      <Divider />
-      
-      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/managePackages`}><AssignmentIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 17, fontWeight: 400 }}>Manage Packages</Button>
-      </Link>
+      {admin && <Box>
+        <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/assignAdmin`}><GroupAddIcon />
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Assign Admin</Button>
+        </Link>
+        <Divider />
+
+        <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addPackage`}><AddCircleOutlineIcon />
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Add Package</Button>
+        </Link>
+        <Divider />
+
+        <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/managePackages`}><AssignmentIcon />
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Manage Packages</Button>
+        </Link>
+
+      </Box>}
+
     </div>
   );
 
@@ -152,17 +159,21 @@ function Deashboard(props) {
             <DashboardHome date={date} setDate={setDate} />
           </Route>
 
-          <Route path={`${path}/assignAdmin`}>
+          <Route path={`${path}/payment/:bookingId`}>
+            <Payment />
+          </Route>
+
+          <AdminRoute path={`${path}/assignAdmin`}>
             <AssignAdmin />
-          </Route>
+          </AdminRoute>
 
-          <Route path={`${path}/addPackage`}>
+          <AdminRoute path={`${path}/addPackage`}>
             <AddPackage />
-          </Route>
+          </AdminRoute>
 
-          <Route path={`${path}/managePackages`}>
+          <AdminRoute path={`${path}/managePackages`}>
             <ManagePackages />
-          </Route>
+          </AdminRoute>
 
         </Switch>
       </Box>

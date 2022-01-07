@@ -39,18 +39,20 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const Bookings = ({ date }) => {
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const [bookings, setBookings] = useState([]);
 
 
   useEffect(() => {
     const url = `http://localhost:5000/bookings?email=${user.email}&date=${date}`
-    fetch(url)
+
+    fetch(url, {
+      'authorization': `Bearer ${token}`,
+      // 'content-type': 'application/json'
+    })
       .then(res => res.json())
       .then(data => setBookings(data))
-  }, [date, user]);
-
-
+  }, [date, user, token]);
 
   const handleDelete = id => {
     const url = `http://localhost:5000/bookings/${id}`
@@ -73,7 +75,6 @@ const Bookings = ({ date }) => {
 
   }
 
-
   return (
     <div>
       <div>
@@ -84,9 +85,9 @@ const Bookings = ({ date }) => {
           <Table sx={{ minWidth: 700 }} aria-label="Bookings table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Name</StyledTableCell>
-                <StyledTableCell align="center">Contact info</StyledTableCell>
-                {/* <StyledTableCell align="center">Payment</StyledTableCell> */}
+                {/* <StyledTableCell>Name</StyledTableCell> */}
+                <StyledTableCell align="center">Contact Info</StyledTableCell>
+                <StyledTableCell align="center">Payment</StyledTableCell>
                 <StyledTableCell align="center">Package</StyledTableCell>
                 <StyledTableCell align="center">Price</StyledTableCell>
                 <StyledTableCell align="center">Action</StyledTableCell>
@@ -95,20 +96,18 @@ const Bookings = ({ date }) => {
             <TableBody>
               {bookings.map((mybooking) => (
                 <StyledTableRow key={mybooking._id}>
-                  <StyledTableCell component="th" scope="row">
+                  {/* <StyledTableCell component="th" scope="row">
                     {mybooking.customerName}
-                  </StyledTableCell>
+                  </StyledTableCell> */}
 
                   <StyledTableCell align="center">{mybooking.email}</StyledTableCell>
 
-                  {/* <StyledTableCell align="center">{row.payment ?
-                  'Paid' :
-                  <Link to={`/dashboard/payment/${row._id}`}>
-                    <button>Pay</button>
-                  </Link>
-                }
+                  <StyledTableCell align="center">{mybooking.payment ?
+                    'Paid' :
+                    <Link style={{ textDecoration: "none" }} to={`/dashboard/payment/${mybooking._id}`}><Button variant="contained" style={{ backgroundColor: 'green' }}>Pay</Button></Link>
+                  }
+                  </StyledTableCell>
 
-                </StyledTableCell> */}
                   <StyledTableCell align="center">{mybooking.serviceName}</StyledTableCell>
                   <StyledTableCell align="center">$ {mybooking.price}</StyledTableCell>
 

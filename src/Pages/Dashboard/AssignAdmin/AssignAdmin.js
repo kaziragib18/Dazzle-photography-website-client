@@ -2,11 +2,12 @@ import { Alert, Button, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
 
 const AssignAdmin = () => {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
-  // const { token } = useAuth();
+  const { token } = useAuth();
 
   const handleOnBlur = e => {
     setEmail(e.target.value);
@@ -17,7 +18,7 @@ const AssignAdmin = () => {
     fetch('http://localhost:5000/users/admin', {
       method: 'PUT',
       headers: {
-        // 'authorization': `Bearer${token}`,
+        'authorization': `Bearer ${token}`,
         'content-type': 'application/json'
       },
       body: JSON.stringify(user)
@@ -26,7 +27,7 @@ const AssignAdmin = () => {
       .then(data => {
         if (data.modifiedCount) {
           console.log(data);
-          setEmail('');
+          // setEmail('');
           setSuccess(true);
         }
       })
