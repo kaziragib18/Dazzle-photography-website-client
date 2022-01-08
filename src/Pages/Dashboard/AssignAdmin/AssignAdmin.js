@@ -1,8 +1,9 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, Container, Grid, Paper, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import login from '../../../images/add_admin.svg';
 
 const AssignAdmin = () => {
   const [email, setEmail] = useState('');
@@ -36,44 +37,47 @@ const AssignAdmin = () => {
   }
 
   return (
-    <div>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          '& > :not(style)': {
-            m: 1,
-            width: "35%",
-            height: 170
-          },
-        }}
-      >
+    <Container>
+      <Paper elevation={24} sx={{ p: 4, mt: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item sx={{ mt: 3 }} xs={12} md={6}>
+            <h2 className="google-font text-warning"> Assign New Admin
+            </h2>
+            <Box>
+              <form>
+                <TextField
+                  sx={{ font: 'italic', width: '60%', m: 1 }}
+                  label="Enter Email"
+                  type="email"
+                  name="email"
+                  onBlur={handleOnBlur}
+                  variant="standard"
+                />
+                <br />
+                <Button
+                  onClick={handleAdminSubmit}
+                  variant="contained"
+                  sx={{ width: "35%", m: 1 }}
+                  style={{ backgroundColor: '#e23801', fontFamily: 'poppins', }}
+                >Assign</Button>
+              </form>
+            </Box>
 
-        <form>
-          <h1 className='google-font'>Assign New Admin</h1>
-          <TextField
-            sx={{ font: 'italic', width: '100%', m: 1 }}
-            label="New Admin Email"
-            type="email"
-            name="email"
-            onBlur={handleOnBlur}
-            variant="standard"
-          />
-          <br />
-          <Button
-            onClick={handleAdminSubmit}
-            variant="contained"
-            sx={{ width: "35%", m: 1 }}
-            style={{ backgroundColor: '#388e3c', fontFamily: 'poppins', }}
-          >Assign</Button>
-        </form>
-      </Box>
+            {success && <Alert severity="success" style={{ width: "40%" }}>SuccessFully Assign New Admin!
+            </Alert>}
 
-      {success && <Alert severity="success" style={{ width: "40%" }}>SuccessFully Assign New Admin!
-      </Alert>}
+          </Grid>
 
-    </div>
+          <Grid item xs={12} md={6}>
+            <img src={login} style={{ width: '80%', marginTop: 30 }} alt="" />
+          </Grid>
+
+        </Grid>
+      </Paper>
+    </Container >
   );
 };
 
 export default AssignAdmin;
+
+
