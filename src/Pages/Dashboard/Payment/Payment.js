@@ -35,10 +35,11 @@ const Payment = () => {
               <h5>Booking date: {booking.date}</h5>
               <h5>Pay: $ {booking.price}</h5>
               <hr />
-              <Elements stripe={stripePromise}>
+              {booking?.price && <Elements stripe={stripePromise}>
                 <CheckoutForm
                   booking={booking} />
               </Elements>
+              }
             </div>
 
           </Grid>

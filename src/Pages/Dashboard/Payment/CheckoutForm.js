@@ -1,13 +1,31 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import Button from '@mui/material/Button';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import { CircularProgress } from '@mui/material';
 
 const CheckoutForm = ({ booking }) => {
-  const { price } = booking;
+  const { price, customerName, _id } = booking;
   const stripe = useStripe();
   const elements = useElements();
+  const { user } = useAuth();
 
   const [error, setError] = useState();
+  const [success, setSuccess] = useState('');
+  const [processing, setProcessing] = useState(false);
+  const [clientSecret, setClientSecret] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:5000/create-payment-intent', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ price })
+    })
+      .then(res => res.json())
+      .then(data => setClientSecret(data.clientSecret));
+  }, [price]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +36,7 @@ const CheckoutForm = ({ booking }) => {
     if (card === null) {
       return;
     }
+    setProcessing(true);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card
@@ -29,6 +48,48 @@ const CheckoutForm = ({ booking }) => {
       setError('');
       console.log(paymentMethod);
     }
+
+    const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: customerName,
+            email: user.email
+          },
+        },
+      },
+    );
+    if (intentError) {
+      setError(intentError.message);
+      setSuccess('');
+    }
+    else {
+      setError('');
+      setSuccess('Your payment processed successfully.')
+      console.log(paymentIntent);
+      setProcessing(false);
+
+      //save payment to database
+      const payment = {
+        amount: paymentIntent.amount,
+        created: paymentIntent.created,
+        last4: paymentMethod.card.last4,
+        transaction: paymentIntent.client_secret.slice('_secret')[0]
+      }
+      const url = `http://localhost:5000/bookings/${_id}`;
+      fetch(url, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(payment)
+      })
+        .then(res => res.json())
+        .then(data => console.log(data));
+    }
+
 
   }
   return (
@@ -55,15 +116,21 @@ const CheckoutForm = ({ booking }) => {
             }}
           />
         </div>
-        <Button variant="contained"
-          style={{ marginTop: "15px", backgroundColor: '#e23801' }} type="submit"
-          disabled={!stripe}
-        >
-          Pay $ {price}
-        </Button>
+        {processing ? <CircularProgress />
+          :
+          <Button variant="contained"
+            style={{ marginTop: "15px", backgroundColor: '#e23801' }} type="submit"
+            disabled={!stripe || success}
+          >
+            Pay $ {price}
+          </Button>
+        }
       </form>
       {
         error && <p style={{ paddingTop: '15px', color: 'red' }}>{error}</p>
+      }
+      {
+        success && <p style={{ paddingTop: '15px', color: 'green' }}>{success}</p>
       }
     </div>
   );
