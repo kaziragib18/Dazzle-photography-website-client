@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import swal from 'sweetalert';
 import login from '../../../images/add_admin.svg';
 
 const AssignAdmin = () => {
@@ -27,10 +28,14 @@ const AssignAdmin = () => {
       .then(res => res.json())
       .then(data => {
         if (data.modifiedCount) {
-          console.log(data);
-          // setEmail('');
+          swal({
+            title: 'New Admin Added Successfully',
+            icon: "success",
+            button: "ok",
+          });
           setSuccess(true);
         }
+
       })
 
     e.preventDefault();
@@ -63,8 +68,8 @@ const AssignAdmin = () => {
               </form>
             </Box>
 
-            {success && <Alert severity="success" style={{ width: "40%" }}>SuccessFully Assign New Admin!
-            </Alert>}
+            {/* {success && <Alert severity="success" style={{ width: "40%" }}>SuccessFully Assign New Admin!
+            </Alert>} */}
 
           </Grid>
 

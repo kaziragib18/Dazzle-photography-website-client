@@ -16,13 +16,15 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import './Navigation.css';
 
 const Navigation = () => {
   const theme = useTheme()
   const useStyle = makeStyles({
     navItem: {
-      color: 'lightgray',
-      textDecoration: 'none'
+      textDecoration: 'none',
+      fontFamily: "poppins",
+      fontWeight: 600
     },
     navIcon: {
       [theme.breakpoints.up('sm')]: {
@@ -50,7 +52,7 @@ const Navigation = () => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar style={{ backgroundColor: "#212121" }} position="static">
+        <AppBar className="app_bar" position="static">
           <Toolbar >
             <IconButton
               size="large"
@@ -59,38 +61,37 @@ const Navigation = () => {
               aria-label="menu"
               sx={{ mr: 0 }}
               className={navIcon}
+              onClick={() => setState(true)}
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, }}>
+            <Typography className='logo-style' variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 21, fontFamily: "poppins", fontWeight: 500, }}>
               DAZZLE
             </Typography>
 
             <Box className={navItemContainer}>
               <Link
                 className={navItem}
-                to='/home'> <Button color="warning"
-                  sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}
-                >Home</Button>
+                to='/home'> <Button
+                  className='navBtn'
+                >HOME</Button>
               </Link>
 
               <Link className={navItem}
-                to='/allPackages'><Button color="warning"
-                  sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Packages</Button></Link>
+                to='/allPackages'><Button className='navBtn'>PACKAGES</Button></Link>
 
               {user?.email ?
                 <>
-                  <Link className={navItem} to='/dashboard'><Button color="warning"
-                    sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Dashboard</Button>
+                  <Link className={navItem} to='/dashboard'><Button className='navBtn'
+                  >DASHBOARD</Button>
                   </Link>
 
-                  <Button onClick={logOut} color="inherit"
-                    sx={{ color: "#b71c1c", fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Logout</Button>
+                  <Button onClick={logOut}
+                    className='navBtn-logout'>LOGOUT</Button>
                 </>
                 :
                 <Link className={navItem} to='/login'>
-                  <Button color="warning"
-                    sx={{ fontFamily: "poppins", fontWeight: "500", fontSize: "17px" }}>Login</Button>
+                  <Button className='navBtn'>LOGIN</Button>
                 </Link>
               }
             </Box>
@@ -99,22 +100,29 @@ const Navigation = () => {
         </AppBar>
       </Box>
       <div>
+
         <React.Fragment>
           <Drawer
+            // style={{ backgroundColor: "black" }}
             open={state}
             onClose={() => setState(false)}
           >
-            <Box sx={{ width: 250 }} role="presentation">
+            <Box sx={{ width: 200 }} role="presentation">
               <List>
                 <ListItem button>
                   <ListItemText>
-                    <Link className={drawerItem} to="/home">HOME</Link>
+                    <Link className={drawerItem}
+                      style={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 600 }}
+                      to="/home">HOME</Link>
                   </ListItemText>
                 </ListItem>
                 <Divider />
 
                 <ListItem button>
-                  <ListItemText> <Link className={drawerItem} to="/allPackages">ALL PACKAGES</Link></ListItemText>
+                  <ListItemText> <Link
+                    className={drawerItem}
+                    style={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 600 }}
+                    to="/allPackages">PACKAGES</Link></ListItemText>
                 </ListItem>
                 <Divider />
 
@@ -122,20 +130,32 @@ const Navigation = () => {
                   <>
                     <ListItem button>
                       <ListItemText>
-                        <Link className={drawerItem} to="/dashboard"><Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Dashboard</Button></Link>
+                        <Link className={drawerItem}
+                          style={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 600 }}
+                          to="/dashboard">DASHBOARD
+                        </Link>
                       </ListItemText>
                     </ListItem>
                     <Divider />
                     <ListItem button>
                       <ListItemText>
-                        <Link className={drawerItem} to="/login"><Button onClick={logOut} style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 16, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button></Link>
+                        <Link
+                          onClick={logOut}
+                          className={drawerItem}
+                          style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 15, fontWeight: 600 }} color="error"
+                          to="/login">
+                          LOGOUT</Link>
                       </ListItemText>
                     </ListItem>
                   </>
                   :
                   <ListItem button>
                     <ListItemText>
-                      <Link className={drawerItem} to="/login"> <Button style={{ textDecoration: "none", color: "dark", fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Login</Button></Link>
+                      <Link
+                        className={drawerItem}
+                        style={{ textDecoration: "none", color: "dark", fontFamily: 'poppins', fontSize: 15, fontWeight: 600 }} color="inherit"
+                        to="/login">
+                        LOGIN</Link>
                     </ListItemText>
                   </ListItem>
                 }

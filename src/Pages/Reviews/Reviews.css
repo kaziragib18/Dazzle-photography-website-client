@@ -1,0 +1,163 @@
+.review-user-image img {
+  width: 100%;
+  border-radius: 44px;
+}
+
+.review-user-image {
+  width: 22%;
+}
+
+.reviews-description {
+  color: #fff;
+}
+
+.review-card {
+  color: #fff;
+  border-radius: 10px;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+}
+
+.review-user-name-title h3 {
+  margin: 0; 
+  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1px;
+}
+
+.review-user-name-title p {
+  margin: 0;
+  color: #d0d0d0;
+  font-size: 12px;
+}
+
+.review-user-name-title {
+  margin-left: 20px;
+}
+
+.reviews{
+  background-color: #030303;
+  padding-top: 40px;
+  padding-bottom: 130px;
+}
+
+.reviews-description p {
+  line-height: 23px;
+  margin-bottom: 25px;
+  color: #b1b1b1;
+  font-weight: 400;
+}
+.reviews-user-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+}
+.review-box-image i {
+  color: #e7400d;
+  font-size: 39px;
+}
+.review-card {
+  background: rgb(22, 21, 21);
+  padding: 0px 30px;
+  margin-right: 20px;
+}
+.reviews-description {
+  padding-top: 16px;
+}
+.review-box-image {
+  margin-top: 8px;
+}
+
+
+
+.reviews-title {
+  text-align: center;
+}
+
+.reviews-title h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  position: relative;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+}
+
+.reviews-title p {
+  margin: 0;
+  color: #a1a1a1;
+}
+
+.reviews-title h1:before {content: '';background: #ffba00;width: 13%;height: 3px;display: block;position: absolute;left: 43%;bottom: -8px;}
+
+.reviews-title {
+  margin-bottom: 37px;
+}
+
+
+
+
+/* ==================================================================================================================== */
+.slick-next {
+  padding: 14px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5vw;
+  background-color: #000;
+  z-index: 99 !important;
+  top: 46%;
+  right: -49px;
+}
+.slick-prev{
+  padding: 14px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5vw;
+  background-color: #000;
+  z-index: 99 !important;
+  left: -70px;
+  top: 46%;
+}
+
+.slick-next:hover, .slick-prev:hover {
+  background-color: #ffba00;
+}
+
+
+@media screen and (max-width:768px) {
+  .slick-next {
+      display: none !important;
+  }
+  .slick-prev{
+      display: none !important;
+  }
+  .review-card {
+      margin-right: 1px;
+  }
+
+
+}
+
+
+@media screen and (max-width:1024px) {
+  .slick-next {
+      display: none !important;
+  }
+  .slick-prev{
+      display: none !important;
+  }
+  .review-card {
+      margin-right: 1px;
+  }
+
+
+}
+

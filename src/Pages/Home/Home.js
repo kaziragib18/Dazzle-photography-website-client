@@ -8,20 +8,24 @@ import Blog from '../Blog/Blog';
 import Footer from '../Shared/Footer/Footer';
 import Team from '../Team/Team';
 import Packages from '../Packages/Packages';
+import FeatureCards from '../FeatureCard/Featurecards';
+import Reviews from '../../Pages/Reviews/Reviews';
 
 const Home = () => {
-  const [date, setDate] = React.useState(new Date());
+  // const [date, setDate] = React.useState(new Date());
   return (
     <div>
       <Navigation />
       <Banner />
       <Team />
-      <Packages date={date} />
+      <FeatureCards />
+      {/* <Packages date={date} /> */}
       <Services />
       <Gallery />
-      <NewsLetter/>
+      <NewsLetter />
       <Blog />
-      <Footer/>
+      <Reviews />
+      <Footer />
     </div>
   );
 };

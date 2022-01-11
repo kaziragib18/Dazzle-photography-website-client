@@ -2,6 +2,7 @@ import { Container, Grid, Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const ManagePackages = () => {
   const [packages, setPackages] = useState([]);
@@ -14,7 +15,14 @@ const ManagePackages = () => {
 
   const handleDelete = id => {
     const url = `http://localhost:5000/packages/${id}`
-    const proceed = window.confirm('Are you sure about deleting this Package?');
+    const proceed = swal({
+      title: "Are you sure?",
+      text: "delete this product",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }, [false])
+
     if (proceed) {
       fetch(url, {
         method: 'DELETE'
@@ -23,12 +31,15 @@ const ManagePackages = () => {
         .then(data => {
           console.log(data);
 
-          if (data.deletedCount) {
-            alert('Product is Permanently Deleted!');
+          if (data?.deletedCount) {
+            swal("Your Product is Deleted Permanently!", "", "success");
             const remaining = packages.filter(packageAll => packageAll._id !== id)
             setPackages(remaining);
+          } else {
+            swal("Your product is safe!");
           }
         })
+
     }
 
   }

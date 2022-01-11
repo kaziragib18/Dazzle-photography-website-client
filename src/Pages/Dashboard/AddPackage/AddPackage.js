@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 import { useForm } from "react-hook-form";
 import './AddPackage.css'
 
@@ -11,12 +12,16 @@ const AddPackage = () => {
       .then(res => {
         console.log(res);
         if (res.data.insertedId) {
-          alert('Successfully Added');
-          reset();
+          swal({
+            title: 'New Package Added Successfully',
+            icon: "success",
+            button: "ok",
+          });
+          reset()
         }
       })
 
-  }
+  };
 
   return (
     <div className="add__package">

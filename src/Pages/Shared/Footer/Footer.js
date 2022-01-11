@@ -11,10 +11,8 @@ const Footer = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} md={3}>
               <div className='main-footer-topic'>
-                <div className='main-footer-topic-img'>
-                  <p><img className='w-25' src={logo} alt="logo" /><span style={{ color: "#ef6c00", fontSize:"20px"}} >DAZ</span><span style={{ color: "#ff9800", fontSize:"20px" }} >ZLE</span> </p>
-                  <p className='text-start'>We specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light. </p>
-                </div>
+                <h1 className='footer-text'>DAZZLE</h1>
+                <p className='text-start'>We specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light. </p>
                 <div className="social-media-main">
                   <h3>SOCIAL MEDIA</h3>
                   <div className='social-media-icons'>

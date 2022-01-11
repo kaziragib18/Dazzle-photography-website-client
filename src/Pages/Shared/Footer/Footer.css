@@ -1,10 +1,17 @@
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins', sans-serif;
 }
 .footer-top {
   border-top: 1px solid #80808045;
   padding-top: 80px;
   padding-bottom: 45px;
+}
+
+.footer-text{
+  font-family: 'poppins', sans-serif;
+  background: -webkit-linear-gradient(rgba(238, 15, 15, 0.788), rgb(218, 165, 21));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .top-info {
