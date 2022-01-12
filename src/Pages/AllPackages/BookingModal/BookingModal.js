@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
 import { Button } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
+import swal from 'sweetalert';
+import { useHistory } from 'react-router';
 
 const style = {
   position: 'absolute',
@@ -21,6 +23,7 @@ const style = {
 const BookingModal = ({ openBooking, handleBookingClose, packageData, date, setBookingSuccess }) => {
   const { name, img, price } = packageData;
   const { user } = useAuth();
+  const history = useHistory();
 
   const initialInfo = { customerName: user.displayName, email: user.email, phone: '' }
   const [bookingInfo, setBookingInfo] = useState(initialInfo);
@@ -51,9 +54,15 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData, date, setB
     })
       .then(res => res.json())
       .then(data => {
-        if (data.insertedId) {
-          setBookingSuccess(true);
+        if (data?.insertedId) {
+          swal({
+            title: 'Order has been placed successfully',
+            icon: "success",
+            button: "ok",
+          });
+          // setBookingSuccess(true);
           handleBookingClose();
+          history.push('/dashboard')
         }
       })
 
@@ -68,9 +77,6 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData, date, setB
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        {/* <h2 className='google-font pb-2 text-center' >
-          {name}
-        </h2> */}
         <div className='w-100 pb-2'>
           <img className='w-100' style={{ borderRadius: "20px" }} src={img} alt="" />
         </div>

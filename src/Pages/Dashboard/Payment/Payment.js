@@ -13,6 +13,7 @@ const stripePromise = loadStripe('pk_test_51Jw7IMLUedPupBbn2LmP9WJ2IRAA93NLWDdID
 const Payment = () => {
   const { bookingId } = useParams()
   const [booking, setBooking] = useState({})
+
   useEffect(() => {
     fetch(`http://localhost:5000/bookings/${bookingId}`)
       .then(res => res.json())

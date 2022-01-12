@@ -19,7 +19,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import PaymentIcon from '@mui/icons-material/Payment';
+// import PaymentIcon from '@mui/icons-material/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AssignAdmin from '../../Dashboard/AssignAdmin/AssignAdmin'
 import useAuth from '../../../hooks/useAuth';
@@ -27,6 +27,7 @@ import AddPackage from '../AddPackage/AddPackage';
 import ManagePackages from '../ManagePackages/ManagePackages';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Payment from '../Payment/Payment';
+import AddReview from '../../Dashboard/AddReview/AddReview';
 
 const drawerWidth = 223;
 
@@ -42,46 +43,43 @@ function Deashboard(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  // const useStyle = makeStyles({
-  //   btn: {
-  //     fontFamily: 'poppins',
-  //     fontSize: 17,
-  //     fontWeight: 400
-  //   },
-  // })
-
 
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
       <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to="/home"><HomeIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}> Home</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}> Home</Button>
       </Link>
       <br />
       <Link style={{ textDecoration: "none", color: "gray", padding: "5px" }} to="/allPackages"><CameraEnhanceIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}> All Packages</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}> All Packages</Button>
       </Link>
       <Divider />
 
       <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}`}><EventNoteOutlinedIcon />
-        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Booking</Button>
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Booking</Button>
+      </Link>
+      <Divider />
+
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addReview`}><AddCircleOutlineIcon />
+        <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Add Review</Button>
       </Link>
       <Divider />
 
       {admin && <Box>
         <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/assignAdmin`}><GroupAddIcon />
-          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Assign Admin</Button>
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Assign Admin</Button>
         </Link>
         <Divider />
 
         <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addPackage`}><AddCircleOutlineIcon />
-          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Add Package</Button>
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Add Package</Button>
         </Link>
         <Divider />
 
         <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/managePackages`}><AssignmentIcon />
-          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 16, fontWeight: 400 }}>Manage Packages</Button>
+          <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Manage Packages</Button>
         </Link>
 
       </Box>}
@@ -101,7 +99,7 @@ function Deashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "#212121" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -161,6 +159,10 @@ function Deashboard(props) {
 
           <Route path={`${path}/payment/:bookingId`}>
             <Payment />
+          </Route>
+
+          <Route path={`${path}/addReview`}>
+            <AddReview />
           </Route>
 
           <AdminRoute path={`${path}/assignAdmin`}>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital@1&display=swap');
 
 .add__package{
-  width: 100%;
+  width: 50%;
 }
 .add__package form{
       display: flex;
@@ -12,7 +12,7 @@
 }
 
 .add__package form input, textarea{
-      width: 50%;
+      width: 100%;
       margin-bottom: 10px;
       padding: 10px;
 }

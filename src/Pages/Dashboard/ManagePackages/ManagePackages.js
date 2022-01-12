@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Container, Grid, Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -11,43 +12,37 @@ const ManagePackages = () => {
     fetch('http://localhost:5000/packages')
       .then(res => res.json())
       .then(data => setPackages(data))
-  }, [])
+  }, [packages])
 
-  const handleDelete = id => {
-    const url = `http://localhost:5000/packages/${id}`
-    const proceed = swal({
+  const handleDelete = (id) => {
+
+    swal({
       title: "Are you sure?",
-      text: "delete this product",
+      text: "You want to delete this product?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
-    }, [false])
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          axios.delete(`http://localhost:5000/packages/${id}`)
+            .then(function (res) {
+              if (res?.data?.deletedCount) {
+                swal("Deleted Successfully!!", "", "success");
+              }
+            })
 
-    if (proceed) {
-      fetch(url, {
-        method: 'DELETE'
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-
-          if (data?.deletedCount) {
-            swal("Your Product is Deleted Permanently!", "", "success");
-            const remaining = packages.filter(packageAll => packageAll._id !== id)
-            setPackages(remaining);
-          } else {
-            swal("Your product is safe!");
-          }
-        })
-
-    }
+        } else {
+          swal("Your product is safe!");
+        }
+      });
 
   }
 
-
   return (
     <div>
-      <h1 className='google-font p-1 fs-1'>Manage All Packages</h1>
+      <h3 className='google-font text-warning p-0 fs-1'>Manage All Packages</h3>
+      <hr />
       {
         packages.map(packageAll =>
           < div className='home-services p-0 ' key={packageAll._id} >

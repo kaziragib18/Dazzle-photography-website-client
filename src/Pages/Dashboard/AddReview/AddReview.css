@@ -1,0 +1,13 @@
+.add__review form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.add__review form input, select, textarea{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}

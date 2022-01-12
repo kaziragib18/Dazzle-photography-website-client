@@ -1,4 +1,4 @@
-import { CircularProgress, Container, Grid } from '@mui/material';
+import { CircularProgress, Container } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import LeftArrow from "../../images/left-arrow.svg"
@@ -9,7 +9,7 @@ import './Reviews.css'
 const Reviews = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch(`AllData/ReviewData.json`)
+    fetch(`http://localhost:5000/reviews`)
       .then(res => res.json())
       .then(data => setData(data))
   }, [])
@@ -29,7 +29,7 @@ const Reviews = () => {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     cssEase: "linear",
     initialSlide: 0,
     prevArrow: <SlickArrowLeft />,
@@ -62,8 +62,6 @@ const Reviews = () => {
     ]
   };
 
-
-
   return (
     <div className='reviews'>
       <Container>
@@ -75,13 +73,9 @@ const Reviews = () => {
         {data.length === 0 ?
           <CircularProgress sx={{ margin: 'auto', display: 'block' }} />
           : <Slider {...settings} className="card__container--inner">
-
-
             {
               data.map((x) => <Review card={x} />)
             }
-
-
           </Slider>
         }
 

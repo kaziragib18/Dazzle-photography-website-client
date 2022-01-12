@@ -22,10 +22,10 @@
 }
 
 .review-user-name-title h3 {
-  margin: 0; 
-  font-size: 22px;
+  margin-top: 5px; 
+  font-size: 18px;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 .review-user-name-title p {

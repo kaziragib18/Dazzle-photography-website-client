@@ -1,21 +1,29 @@
 import React from 'react';
+import ReactStars from "react-rating-stars-component";
 
 const Review = ({ card }) => {
-  const { img, title, name, dis } = card
+  const { img, email, name, desc, rating } = card
   return (
-
     <div className="review-card">
       <div className='reviews-description'>
-        <p>{dis}</p>
+        <p>{desc}</p>
       </div>
       <div className='reviews-user-intro'>
         <div className='review-user'>
           <div className='review-user-image'>
-            <img src={img} alt="" />
+            <img src={`data:image/jpeg;base64,${img}`} alt="profileImage" />
           </div>
           <div className='review-user-name-title'>
             <h3>{name}</h3>
-            <p>{title}</p>
+            <p>{email}</p>
+            <ReactStars
+              count={Number(rating)}
+              value={Number(rating)}
+              isHalf={true}
+              edit={false}
+              size={20}
+              color="#666"
+            />
           </div>
         </div>
         <div className='review-box-image'>

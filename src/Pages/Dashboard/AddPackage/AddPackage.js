@@ -25,8 +25,8 @@ const AddPackage = () => {
 
   return (
     <div className="add__package">
-      <h2 className="google-font text-dark text-center">Add New Package</h2>
-
+      <h2 className="google-font text-warning text-center">Add New Package</h2>
+      <hr />
       <form onSubmit={handleSubmit(onSubmit)} >
         <input {...register("name", { required: true, maxLength: 50 })} placeholder="Package Name" />
         <textarea {...register("desc1")} placeholder="Description-1" />

@@ -67,10 +67,6 @@ const AssignAdmin = () => {
                 >Assign</Button>
               </form>
             </Box>
-
-            {/* {success && <Alert severity="success" style={{ width: "40%" }}>SuccessFully Assign New Admin!
-            </Alert>} */}
-
           </Grid>
 
           <Grid item xs={12} md={6}>

@@ -90,8 +90,8 @@ const CheckoutForm = ({ booking }) => {
         .then(data => console.log(data));
     }
 
-
   }
+
   return (
     <div style={{ width: "75%" }}>
       <form

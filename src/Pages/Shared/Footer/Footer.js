@@ -1,6 +1,6 @@
 import { Container, Grid } from '@mui/material';
 import React from 'react';
-import logo from "../../../images/logo-removebg.png"
+// import logo from "../../../images/logo-removebg.png"
 
 import './Footer.css'
 const Footer = () => {

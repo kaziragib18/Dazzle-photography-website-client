@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import useAuth from '../../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
@@ -12,7 +13,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import * as BsIcon from 'react-icons/bs';
-
+import swal from 'sweetalert';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -42,7 +43,6 @@ const Bookings = ({ date }) => {
   const { user, token } = useAuth();
   const [bookings, setBookings] = useState([]);
 
-
   useEffect(() => {
     const url = `http://localhost:5000/bookings?email=${user.email}&date=${date}`
 
@@ -52,28 +52,32 @@ const Bookings = ({ date }) => {
     })
       .then(res => res.json())
       .then(data => setBookings(data))
-  }, [date, user, token]);
+  }, [bookings, date, user, token]);
 
-  const handleDelete = id => {
-    const url = `http://localhost:5000/bookings/${id}`
-    const proceed = window.confirm('Are you sure about canceling this booking?');
-    if (proceed) {
-      fetch(url, {
-        method: 'DELETE'
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
+  const handleDelete = (id) => {
+    swal({
+      title: "Are you sure?",
+      text: "You want to cancel this order?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          axios.delete(`http://localhost:5000/bookings/${id}`)
+            .then(function (res) {
+              if (res?.data?.deletedCount) {
+                swal("Your Order has been Canceled!", "", "success")
+              }
+            })
 
-          if (data.deletedCount) {
-            alert('Booking is Cancled!');
-            const remaining = bookings.filter(mybooking => mybooking._id !== id)
-            setBookings(remaining);
-          }
-        })
-    }
+        } else {
+          swal("Your order is processing!");
+        }
+      });
 
   }
+
 
   return (
     <div>
@@ -87,9 +91,9 @@ const Bookings = ({ date }) => {
               <TableRow>
                 {/* <StyledTableCell>Name</StyledTableCell> */}
                 <StyledTableCell align="center">Contact Info</StyledTableCell>
-                <StyledTableCell align="center">Payment</StyledTableCell>
                 <StyledTableCell align="center">Package</StyledTableCell>
                 <StyledTableCell align="center">Price</StyledTableCell>
+                <StyledTableCell align="center">Payment</StyledTableCell>
                 <StyledTableCell align="center">Action</StyledTableCell>
               </TableRow>
             </TableHead>
@@ -102,14 +106,15 @@ const Bookings = ({ date }) => {
 
                   <StyledTableCell align="center">{mybooking.email}</StyledTableCell>
 
+
+                  <StyledTableCell align="center">{mybooking.serviceName}</StyledTableCell>
+                  <StyledTableCell align="center">$ {mybooking.price}</StyledTableCell>
+
                   <StyledTableCell align="center">{mybooking.payment ?
                     'Paid' :
                     <Link style={{ textDecoration: "none" }} to={`/dashboard/payment/${mybooking._id}`}><Button variant="contained" style={{ backgroundColor: 'green' }}>Pay</Button></Link>
                   }
                   </StyledTableCell>
-
-                  <StyledTableCell align="center">{mybooking.serviceName}</StyledTableCell>
-                  <StyledTableCell align="center">$ {mybooking.price}</StyledTableCell>
 
                   <StyledTableCell align="center">
 
