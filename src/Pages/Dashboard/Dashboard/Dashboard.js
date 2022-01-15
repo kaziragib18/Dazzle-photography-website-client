@@ -20,6 +20,9 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 // import PaymentIcon from '@mui/icons-material/Payment';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AssignAdmin from '../../Dashboard/AssignAdmin/AssignAdmin'
 import useAuth from '../../../hooks/useAuth';
@@ -37,7 +40,7 @@ function Deashboard(props) {
 
   const [date, setDate] = React.useState();
   let { path, url } = useRouteMatch();
-  const { admin } = useAuth();
+  const { admin, user, logOut } = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -62,7 +65,7 @@ function Deashboard(props) {
       </Link>
       <Divider />
 
-      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addReview`}><AddCircleOutlineIcon />
+      <Link style={{ padding: "5px", textDecoration: "none", color: "gray" }} to={`${url}/addReview`}><RateReviewOutlinedIcon />
         <Button color="inherit" sx={{ fontFamily: 'poppins', fontSize: 15, fontWeight: 400 }}>Add Review</Button>
       </Link>
       <Divider />
@@ -83,6 +86,14 @@ function Deashboard(props) {
         </Link>
 
       </Box>}
+      <Divider />
+
+      <Typography style={{ color: "gray", fontFamily: 'poppins', fontSize: 17, marginTop: 60, marginBottom: 6, fontWeight: 300 }} color="error"><AccountCircleOutlinedIcon sx={{ mr: 1 }} />{user.displayName}</Typography>
+
+
+      <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/`}><LogoutOutlinedIcon />
+        <Button onClick={logOut} style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 15, marginBottom: 0, fontWeight: 700 }} color="error">Logout</Button>
+      </Link>
 
     </div>
   );

@@ -144,7 +144,7 @@ const Footer = () => {
               <p>Copyright © 2021. All rights reserved.</p>
             </div>
             <div>
-              <p>Designed by <span>Kazi Md. Ragib</span></p>
+              <p>Designed by <span> Kazi Md. Ragib</span></p>
             </div>
           </div>
         </Container>

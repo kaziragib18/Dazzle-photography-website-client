@@ -69,6 +69,7 @@ const Bookings = ({ date }) => {
               if (res?.data?.deletedCount) {
                 swal("Your Order has been Canceled!", "", "success")
               }
+              // window.location.reload();
             })
 
         } else {

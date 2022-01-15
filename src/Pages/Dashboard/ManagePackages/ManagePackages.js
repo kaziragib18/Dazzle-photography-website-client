@@ -49,7 +49,7 @@ const ManagePackages = () => {
             <Container>
               <div className="home-service-all-content">
                 <Grid container spacing={1}></Grid>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12}>
                   <div className="Home-service-box">
                     <div className="home-service-box-image image-box">
                       <img className='gallery' src={packageAll.img} alt="" />

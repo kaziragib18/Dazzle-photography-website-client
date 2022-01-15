@@ -1,5 +1,5 @@
 .package-Top-Banner{
-  background-image: linear-gradient(180deg, #96282800 70%, #020202b3 92%,#000),url(https://i.ibb.co/b6y6CtZ/Package-Banner.jpg);
+  background-image: linear-gradient(180deg, #96282800 70%, #020202b3 92%,#000),url(https://i.ibb.co/QF9NBcK/Package-Banner3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position:center;
@@ -95,6 +95,7 @@
       margin-bottom: 20px;
   }
   .banner-main-text p {
+    font-size: 14px;
       line-height: 22px;
   }
   .banner-models-area {
@@ -103,8 +104,8 @@
   .banner-models {
       margin-bottom: 20px;
   }
-  .home-Top-Banner {
-      background-image: linear-gradient(180deg, #56565600 70%, #020202 92%),url(https://i.ibb.co/b6y6CtZ/Package-Banner.jpg);
+  .package-Top-Banner {
+      background-image: linear-gradient(180deg, #56565600 70%, #020202 92%),url(https://i.ibb.co/QF9NBcK/Package-Banner3.jpg);
       height: 100vh;
   }
 

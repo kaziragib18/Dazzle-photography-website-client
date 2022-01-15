@@ -13,7 +13,7 @@ const Package = ({ packageData, date, setBookingSuccess }) => {
 
   return (
     <>
-      <Grid item xs={6} md={3}>
+      <Grid item xs={12} md={3}>
         <div className="Home-service-box">
           <div className="home-service-box-image image-box">
             <img className='gallery' src={img} alt="" />

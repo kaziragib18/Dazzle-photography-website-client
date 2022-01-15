@@ -73,7 +73,6 @@
 }
 
 
-
 .reviews-title {
   text-align: center;
 }
@@ -128,7 +127,7 @@
 }
 
 .slick-next:hover, .slick-prev:hover {
-  background-color: #ffba00;
+  background-color: #e7410f;
 }
 
 

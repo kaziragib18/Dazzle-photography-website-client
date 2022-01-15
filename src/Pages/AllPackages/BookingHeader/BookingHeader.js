@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material'
-import t4 from '../../../images/Team/t4.jpg';
+import t4 from '../../../images/Team/t-4.jpg';
 import t2 from '../../../images/Team/t2.jpg';
 import Calender from '../../Shared/Calender/Calender';
 
@@ -24,7 +24,7 @@ const BookingHeader = ({ date, setDate }) => {
             <Grid item xs={12} md={5} >
               <div className=''>
                 <h4 className='pt-5 google-font text-warning'>Availabe Booking Schedule</h4>
-                <h2>Select the day you want to book our package</h2>
+                <h3 style={{ fontSize: "1.8rem", color: "#e8e4e4bf" }}>Select the day you want to book our package</h3>
                 <div className='pt-3'>
                   <Calender date={date} setDate={setDate} />
                 </div>

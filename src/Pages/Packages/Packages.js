@@ -11,7 +11,7 @@ const Packages = ({ date }) => {
     fetch('http://localhost:5000/packages')
       .then(res => res.json())
       .then(data => setPackages(data))
-  }, [packages])
+  }, [])
   return (
     <div style={{ backgroundColor: "black" }} className='home-services'>
       <Container>

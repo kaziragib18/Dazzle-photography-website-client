@@ -8,7 +8,7 @@ const DashboardHome = () => {
   const [date, setDate] = React.useState(new Date());
   return (
     <Grid container spacing={0}>
-      <Grid item xs={12} sm={8} md={6} lg={4}>
+      <Grid item xs={7} sm={8} md={6} lg={4}>
         <Box
           sx={{
             display: 'flex',
