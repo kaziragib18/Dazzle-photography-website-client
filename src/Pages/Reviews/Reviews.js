@@ -29,7 +29,7 @@ const Reviews = () => {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 3200,
     cssEase: "linear",
     initialSlide: 0,
     prevArrow: <SlickArrowLeft />,
@@ -66,7 +66,7 @@ const Reviews = () => {
     <div className='reviews'>
       <Container>
 
-        <div className='reviews-title'>
+        <div className='reviews-title' data-aos="fade-down" data-aos-duration="1700">
           <h4 className='google-font text-warning'>Our Client's Review</h4>
           <h2 style={{ fontSize: "2.6rem", color: "#e8e4e4bf" }}>Here whats our clients thinks about our services</h2>
         </div>

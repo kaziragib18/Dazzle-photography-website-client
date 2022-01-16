@@ -53,7 +53,7 @@ const AddReview = () => {
         <div className="row">
           <hr className="text-light mt-2" />
           <div className="col-md-6">
-            <div className="add__review ms">
+            <div className="add__review ms" data-aos="fade-right" data-aos-duration="1900">
               <h2 className="google-font text-warning">Add Your Reviews</h2>
               <hr />
               <form onSubmit={handleSubmit}>
@@ -88,9 +88,9 @@ const AddReview = () => {
               </form>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" data-aos="fade-left" data-aos-duration="1900">
             <div>
-              <img className="w-100" src={Review} alt="" />
+              <img className="w-100 mt-3" src={Review} alt="" />
             </div>
           </div>
         </div>

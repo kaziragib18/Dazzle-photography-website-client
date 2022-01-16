@@ -12,22 +12,22 @@ const Blog = () => {
         <div className='news-article-titles'>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <div className="ourworks-title ba">
+              <div className="ourworks-title ba" data-aos="fade-down" data-aos-duration="1700">
                 <h3 className="google-font text-warning">Our Blogs</h3>
                 <h1 className="text-size fw-bold">BLOGS & ARTICLE</h1>
               </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <div className='title-btn'>
+              {/* <div className='title-btn'>
                 <button disabled>All Blogs</button>
-              </div>
+              </div> */}
             </Grid>
           </Grid>
         </div>
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <div className='left-article-box b'>
+            <div className='left-article-box b' data-aos="fade-right" data-aos-duration="1700">
               <div className='left-article-box-img image-box'>
                 <img className='gallery' src={blog1} alt="" />
               </div>
@@ -42,7 +42,7 @@ const Blog = () => {
           </Grid>
 
           <Grid item xs={12} md={5}>
-            <div className='left-article-box a'>
+            <div className='left-article-box a' data-aos="fade-left" data-aos-duration="1700">
               <div className='left-article-box-img a image-box'>
                 <img className='gallery' src={blog2} alt="" />
               </div>
@@ -54,7 +54,7 @@ const Blog = () => {
               </div>
 
             </div>
-            <div className='left-article-box'>
+            <div className='left-article-box' data-aos="fade-left" data-aos-duration="1700">
               <div className='left-article-box-img a image-box'>
                 <img className='gallery' src={blog3} alt="" />
               </div>

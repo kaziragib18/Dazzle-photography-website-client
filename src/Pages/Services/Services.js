@@ -2,9 +2,9 @@ import React from 'react';
 import './Services.css';
 
 const Services = () => {
-  return (
-    <div className="container my-5 pb-md-5">
-            <div className="d-flex justify-content-center">
+    return (
+        <div className="container my-5 pb-md-5" data-aos="fade-right" data-aos-duration="1700">
+            <div className="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1900">
                 <div className="text-center">
                     <h2 className="google-font text-warning">Enjoy Our</h2>
                     <h1 className="text-size fw-bold">Quility Services</h1>
@@ -13,7 +13,7 @@ const Services = () => {
 
             </div>
 
-            <div className="row g-4 my-3">
+            <div className="row g-4 my-3" data-aos="fade-left" data-aos-duration="1900">
 
                 <div className="col-12 col-md-3">
                     <div className="card text-center border-0">
@@ -60,7 +60,7 @@ const Services = () => {
 
 
         </div>
-  );
+    );
 };
 
 export default Services;

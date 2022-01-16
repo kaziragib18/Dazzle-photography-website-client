@@ -9,6 +9,7 @@
 
 .Feature-card-text h2 {
   font-family: 'Poppins', sans-serif;
+  color: #e2dfdf;
   line-height: 27px;
   margin: 0;
   font-size: 18px;
@@ -26,7 +27,8 @@
 }
 .Feature-card-text button {
   background: transparent;
-  color: #f238018a;
+  color: #eb3f0b;
+  font-weight: 400;
   border: 0;
   font-size: 16px;
   padding: 0;

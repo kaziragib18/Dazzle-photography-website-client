@@ -15,11 +15,11 @@ const Packages = ({ date }) => {
   return (
     <div style={{ backgroundColor: "black" }} className='home-services'>
       <Container>
-        <div>
+        <div data-aos="fade-right" data-aos-duration="1900">
           <h3 className='google-font text-warning'>Our Premium Packages</h3>
           <h2 style={{ fontSize: "2.6rem", color: "#e8e4e4bf" }}>Affordable packages to choose from!</h2>
         </div>
-        <div className="home-service-all-content">
+        <div className="home-service-all-content" data-aos="fade-up" data-aos-duration="1900">
           <Grid container spacing={5}>
             {
               packages.map(packageData => <Package

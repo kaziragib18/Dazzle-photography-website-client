@@ -14,7 +14,11 @@ import AuthProvider from '../src/contexts/AuthProvider/AuthProvider'
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Deashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ManagePackages from './Pages/Dashboard/ManagePackages/ManagePackages';
+import NotFound from './Pages/NotFound/NotFound';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+AOS.init();
 function App() {
   return (
     <div>
@@ -52,6 +56,10 @@ function App() {
 
             <Route path="/managePackages">
               <ManagePackages />
+            </Route>
+
+            <Route exact path="*">
+              <NotFound />
             </Route>
 
           </Switch>

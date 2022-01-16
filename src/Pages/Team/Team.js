@@ -7,21 +7,21 @@ import t3 from '../../images/Team/t3.jpg';
 const Team = () => {
   return (
     <>
-      <div className='team-section pb-5'>
+      <div className='team-section pb-5' >
         <Container>
           <Grid container spacing={15}>
             <Grid item xs={12} md={6}>
-              <div className="team-section-img">
+              <div className="team-section-img" data-aos="fade-left" data-aos-duration="1700">
                 <div className='team-section-img1'>
                   <img style={{ borderRadius: "80px" }} src={t1} alt="" />
                 </div>
-                <div className='team-section-img2'>
+                <div className='team-section-img2' data-aos="fade-left" data-aos-duration="1700">
                   <img style={{ borderRadius: "50px" }} src={t3} alt="" />
                 </div>
               </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <div className='team-section-content'>
+              <div className='team-section-content' data-aos="fade-right" data-aos-duration="1700">
                 <div className='team-content-text-title'>
                   <h4 className='google-font text-warning pt-5'>Our Photographer</h4>
                   <h1>The trusted, professional wedding photography team loved by couples</h1>

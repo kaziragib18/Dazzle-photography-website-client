@@ -10,6 +10,7 @@ const DashboardHome = () => {
     <Grid container spacing={0}>
       <Grid item xs={7} sm={8} md={6} lg={4}>
         <Box
+          data-aos="fade-up" data-aos-duration="1900"
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -28,6 +29,7 @@ const DashboardHome = () => {
       </Grid>
       <Grid item xs={12} md={6} lg={8}>
         <Box
+          data-aos="fade-up" data-aos-duration="1900"
           sx={{
             display: 'flex',
             flexWrap: 'wrap',

@@ -17,14 +17,14 @@ const Gallery = () => {
                 <Col>
                     <Row xs={1} className="g-4">
                         <Col >
-                            <div className="image-box">
+                            <div className="image-box" data-aos="fade-right" data-aos-duration="1900">
                                 <Image className="w-100 gallery" src={wedding1} />
                             </div>
 
                         </Col>
 
                         <Col>
-                            <div className="image-box">
+                            <div className="image-box" data-aos="fade-right" data-aos-duration="1900">
                                 <Image className="w-100 gallery" src={wedding4} />
                             </div>
                         </Col>
@@ -35,7 +35,7 @@ const Gallery = () => {
                 <Col>
                     <Row>
                         <Col>
-                            <div className="image-box">
+                            <div className="image-box" data-aos="fade-up" data-aos-duration="1900">
                                 <Image className="w-100 gallery" src={wedding3} />
                             </div>
                         </Col>
@@ -45,13 +45,14 @@ const Gallery = () => {
                 <Col>
                     <Row xs={1} className="g-4">
                         <Col>
-                            <div className="image-box">
+                            <div className="image-box" data-aos="fade-down" data-aos-duration="1900">
                                 <Image className="w-100 gallery" src={wedding2} />
                             </div>
                         </Col>
 
                         <Col>
-                            <div className="image-box">
+                            <div className="image-box"
+                                data-aos="fade-up" data-aos-duration="1900">
                                 <Image className="w-100 gallery" src={wedding6} />
                             </div>
                         </Col>
@@ -61,8 +62,9 @@ const Gallery = () => {
                 <Col>
                     <Row>
                         <Col>
-                            <div className="image-box">
-                            <Image className="w-100 gallery" src={wedding8} />
+                            <div className="image-box"
+                                data-aos="fade-down" data-aos-duration="1900">
+                                <Image className="w-100 gallery" src={wedding8} />
                             </div>
                         </Col>
                     </Row>

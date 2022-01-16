@@ -21,7 +21,7 @@ const Payment = () => {
   }, [bookingId])
 
   return (
-    <Container>
+    <Container data-aos="fade-up" data-aos-duration="1900">
       <Paper elevation={24} sx={{ p: 4, mt: 1 }}>
         <Grid container spacing={2}>
           <Grid item sx={{ mt: 3 }} xs={12} md={6}>

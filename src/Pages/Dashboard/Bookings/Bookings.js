@@ -81,7 +81,7 @@ const Bookings = ({ date }) => {
 
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="1900">
       <div>
         <Paper elevation={12}><h4 className=' text-center p-4 google-font'>Your have {bookings.length} booking Sheduled</h4></Paper>
       </div>
