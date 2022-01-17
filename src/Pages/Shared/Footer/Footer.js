@@ -11,7 +11,7 @@ const Footer = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} md={3}>
               <div className='main-footer-topic'
-                data-aos="fade-right" data-aos-duration="1700">
+                data-aos="fade-down" data-aos-duration="1700">
                 <h1 className='footer-text'>DAZZLE</h1>
                 <p className='text-start'>We specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light. </p>
                 <div className="social-media-main">
@@ -30,7 +30,7 @@ const Footer = () => {
 
 
             <Grid item xs={12} md={3}>
-              <div className='single-colum' data-aos="fade-left" data-aos-duration="1700">
+              <div className='single-colum' data-aos="fade-down" data-aos-duration="1700">
                 <div className='top-info'>
                   <h3>WANT TO CALL WITH US?</h3>
                   <div className='icon-and-info'>
@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
             </Grid>
             <Grid item xs={12} md={3}>
-              <div className='single-colum' data-aos="fade-left" data-aos-duration="1700">
+              <div className='single-colum' data-aos="fade-down" data-aos-duration="1700">
                 <div className='top-info'>
                   <h3>WANT TO EMAIL WITH US?</h3>
                   <div className='icon-and-info'>
@@ -99,7 +99,7 @@ const Footer = () => {
               </div>
             </Grid>
             <Grid item xs={12} md={3}>
-              <div className='single-colum' data-aos="fade-left" data-aos-duration="1700">
+              <div className='single-colum' data-aos="fade-down" data-aos-duration="1700">
                 <div className='top-info'>
                   <h3>WANT TO VISIT US?</h3>
                   <div className='icon-and-info'>
@@ -140,7 +140,7 @@ const Footer = () => {
       </div>
       <div class="footer-bottom" style={{ backgroundColor: "black" }}>
         <Container>
-          <div className="footer-bottom-text">
+          <div className="footer-bottom-text" data-aos="fade-down" data-aos-duration="1700">
             <div>
               <p>Copyright © 2021. All rights reserved.</p>
             </div>

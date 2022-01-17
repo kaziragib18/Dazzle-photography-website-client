@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <>
       <Navigation />
-      <Container>
+      <Container data-aos="fade-up" data-aos-duration="1900">
         <Paper elevation={24} sx={{ p: 5, mt: 4 }}>
           <Grid container spacing={2}>
             <Grid item sx={{ mt: 2 }} xs={12} md={6}>

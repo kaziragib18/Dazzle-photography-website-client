@@ -27,7 +27,7 @@ const Blog = () => {
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <div className='left-article-box b' data-aos="fade-right" data-aos-duration="1700">
+            <div className='left-article-box b' data-aos="fade-down" data-aos-duration="1700">
               <div className='left-article-box-img image-box'>
                 <img className='gallery' src={blog1} alt="" />
               </div>
@@ -42,7 +42,7 @@ const Blog = () => {
           </Grid>
 
           <Grid item xs={12} md={5}>
-            <div className='left-article-box a' data-aos="fade-left" data-aos-duration="1700">
+            <div className='left-article-box a' data-aos="fade-down" data-aos-duration="1700">
               <div className='left-article-box-img a image-box'>
                 <img className='gallery' src={blog2} alt="" />
               </div>
@@ -54,7 +54,7 @@ const Blog = () => {
               </div>
 
             </div>
-            <div className='left-article-box' data-aos="fade-left" data-aos-duration="1700">
+            <div className='left-article-box' data-aos="fade-down" data-aos-duration="1700">
               <div className='left-article-box-img a image-box'>
                 <img className='gallery' src={blog3} alt="" />
               </div>
