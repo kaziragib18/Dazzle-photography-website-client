@@ -26,7 +26,7 @@ const AddReview = () => {
     formData.append('rating', rating);
     formData.append('desc', desc);
 
-    fetch(`http://localhost:5000/reviews`, {
+    fetch(`https://radiant-stream-13822.herokuapp.com/reviews`, {
       method: 'POST',
       body: formData
     })

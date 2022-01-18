@@ -8,7 +8,7 @@ const Packages = ({ date }) => {
   const [bookingSuccess, setBookingSuccess] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/packages')
+    fetch('https://radiant-stream-13822.herokuapp.com/packages')
       .then(res => res.json())
       .then(data => setPackages(data))
   }, [])

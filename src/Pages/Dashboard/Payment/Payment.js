@@ -15,7 +15,7 @@ const Payment = () => {
   const [booking, setBooking] = useState({})
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings/${bookingId}`)
+    fetch(`https://radiant-stream-13822.herokuapp.com/bookings/${bookingId}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [bookingId])

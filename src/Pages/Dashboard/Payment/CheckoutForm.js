@@ -16,7 +16,7 @@ const CheckoutForm = ({ booking }) => {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://radiant-stream-13822.herokuapp.com/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -78,7 +78,7 @@ const CheckoutForm = ({ booking }) => {
         last4: paymentMethod.card.last4,
         transaction: paymentIntent.client_secret.slice('_secret')[0]
       }
-      const url = `http://localhost:5000/bookings/${_id}`;
+      const url = `https://radiant-stream-13822.herokuapp.com/bookings/${_id}`;
       fetch(url, {
         method: 'PUT',
         headers: {

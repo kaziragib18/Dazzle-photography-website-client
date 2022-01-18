@@ -9,7 +9,7 @@ import './Reviews.css'
 const Reviews = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews`)
+    fetch(`https://radiant-stream-13822.herokuapp.com/reviews`)
       .then(res => res.json())
       .then(data => setData(data))
   }, [])

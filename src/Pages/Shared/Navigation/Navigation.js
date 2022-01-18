@@ -65,9 +65,11 @@ const Navigation = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography className='logo-style' variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 21, fontFamily: "poppins", fontWeight: 500, }}>
-              DAZZLE
-            </Typography>
+            <Link style={{ textDecoration: "none", flexGrow: 1 }} to='/'>
+              <Typography className='logo-style' variant="h6" component="div" sx={{ fontSize: 21, fontFamily: "poppins", fontWeight: 500, }}>
+                DAZZLE
+              </Typography>
+            </Link>
 
             <Box className={navItemContainer}>
               <Link

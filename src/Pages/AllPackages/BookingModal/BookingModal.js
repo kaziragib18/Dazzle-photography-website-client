@@ -45,7 +45,7 @@ const BookingModal = ({ openBooking, handleBookingClose, packageData, date, setB
     }
     // console.log(booking);
 
-    fetch('http://localhost:5000/bookings', {
+    fetch('https://radiant-stream-13822.herokuapp.com/bookings', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

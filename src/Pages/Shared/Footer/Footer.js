@@ -140,7 +140,8 @@ const Footer = () => {
       </div>
       <div class="footer-bottom" style={{ backgroundColor: "black" }}>
         <Container>
-          <div className="footer-bottom-text" data-aos="fade-down" data-aos-duration="1700">
+          <div className="footer-bottom-text"
+          >
             <div>
               <p>Copyright © 2021. All rights reserved.</p>
             </div>

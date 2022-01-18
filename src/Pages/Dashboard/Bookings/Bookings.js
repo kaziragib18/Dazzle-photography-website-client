@@ -44,7 +44,7 @@ const Bookings = ({ date }) => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/bookings?email=${user.email}&date=${date}`
+    const url = `https://radiant-stream-13822.herokuapp.com/bookings?email=${user.email}&date=${date.toLocaleDateString()}`
 
     fetch(url, {
       'authorization': `Bearer ${token}`,
@@ -64,7 +64,7 @@ const Bookings = ({ date }) => {
     })
       .then((willDelete) => {
         if (willDelete) {
-          axios.delete(`http://localhost:5000/bookings/${id}`)
+          axios.delete(`https://radiant-stream-13822.herokuapp.com/bookings/${id}`)
             .then(function (res) {
               if (res?.data?.deletedCount) {
                 swal("Your Order has been Canceled!", "", "success")

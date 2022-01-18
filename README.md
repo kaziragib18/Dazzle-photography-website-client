@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Dazzle Photograghy Website 
+WatchBox is an Online website that is home to the greatest collection of pre-owned luxury watches, all certified as authentic and Collector Quality. WatchBox is a fully responsive website build with Metarial ui, react router v5, firebase authentication system & Heruko delpoyment server.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Live Link:`  https://dazzle-photography-website.web.app/
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `All Features:` 
+ - The site is designed with Material ui, Styled Component, html & Css. Aos used to for ui animation & sweetalert for beautiful alert messages.
+ - It is also designed with a user/admin dashboard.
+ - User can explore & book package for their event.
+ - User can use dashboard for payment and give dynamic star review of the services & used react slick to show the review on Ui.
+ - The review page has a image upload system where user can upload image locally form their device.
+ - Material Ui calender added with date-fns where user can select event date and book pacakge, they can also find there order in the dashboard calander to sort order in a table.
+ - User can view their order on dashbord table where they can cancel their order and also access the stripe payment page.
+ - Website is secure with JWT and Firebase Admin with admin and private route.
+ - Admin can manage and create new service orders or delete them.
+ - Admin can assign new admin role to user in Assign admin page through admin dashbord.
+ - Toggle Registration & Login, implement sign in with email password implemented.
+ - Added Google Signin using custom hook with on State Change.
+ - Implement Sign out and display logged in User name in dashboard.
+ - Created Use Firebase hooks for shared authentication.
+ - Create React App with Environment variable for Firebase.
+ - Used useAuth custom hook and create private route.
+ - Implemented Auth Redirect.
+ - Saved user information to backend database. 
+ - Created Package, Booking, Review, User api with CRUD opertation.
+ - Api data is send from backend mongodb database server which is hosted in heroku.
+ - The website is hosted in firebase.
+ 
+ ### `Website Preview:` 

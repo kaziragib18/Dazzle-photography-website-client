@@ -9,7 +9,7 @@ const ManagePackages = () => {
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/packages')
+    fetch('https://radiant-stream-13822.herokuapp.com/packages')
       .then(res => res.json())
       .then(data => setPackages(data))
   }, [packages])
@@ -25,7 +25,7 @@ const ManagePackages = () => {
     })
       .then((willDelete) => {
         if (willDelete) {
-          axios.delete(`http://localhost:5000/packages/${id}`)
+          axios.delete(`https://radiant-stream-13822.herokuapp.com/packages/${id}`)
             .then(function (res) {
               if (res?.data?.deletedCount) {
                 swal("Deleted Successfully!!", "", "success");
