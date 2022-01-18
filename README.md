@@ -1,5 +1,5 @@
 # Dazzle Photograghy Website 
-WatchBox is an Online website that is home to the greatest collection of pre-owned luxury watches, all certified as authentic and Collector Quality. WatchBox is a fully responsive website build with Metarial ui, react router v5, firebase authentication system & Heruko delpoyment server.
+Dazzle is wedding photography website that offer simple, customisable packages, high res images for their event with affordable, combo packages with flexible payment options.We specialises in event photography with the natural reportage documentation of speacial occasions and celebrations, producing the highest quality imagery that showcase your wedding and event in its best possible light.
 
 ### `Live Link:`  https://dazzle-photography-website.web.app/
 
@@ -27,3 +27,5 @@ WatchBox is an Online website that is home to the greatest collection of pre-own
  - The website is hosted in firebase.
  
  ### `Website Preview:` 
+ ![](src/images/demo%20home.png)
+ ![](src/images/demo%20package.png)
