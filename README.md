@@ -29,3 +29,4 @@ Dazzle is wedding photography website that offer simple, customisable packages, 
  ### `Website Preview:` 
  ![](src/images/demo%20home.png)
  ![](src/images/demo%20package.png)
+ ![](src/images/demo-dashboard.png)
